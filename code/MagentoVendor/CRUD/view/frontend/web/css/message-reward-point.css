@@ -1,0 +1,7 @@
+.reward-message {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.reward-message .message-reward-point {
+    color: red;
+}

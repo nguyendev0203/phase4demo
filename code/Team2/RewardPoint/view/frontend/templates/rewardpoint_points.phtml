@@ -1,0 +1,29 @@
+
+<div class="rw-detail">
+    <?php
+    $totalEarned = 0;
+    $totalSpent = 0;
+    $pointCollectionFactory= $block->getPointCollectionFront();
+    foreach ($pointCollectionFactory as $row):?>
+        <h1 class="rw_points"><?=$row['point']?></h1>
+        <?php $point = $row['point'];?>
+    <?php endforeach;?>
+<p class="rw-balance">Current Balance</p>
+<br>
+<hr>
+    <?php
+    $hisCollectionPoint=$block->getHisCollectionFront();
+    foreach ($hisCollectionPoint as $count):
+        if ($count['action'] == 'Add') {
+            $totalEarned += $count['point'];
+        }
+        if ($count['action'] == 'Deduct') {
+            $totalSpent += $count['point'];
+        } ?>
+    <?php endforeach;?>
+<p class="rw-total">Total Earned: <span class="rw-point-total"><?php echo $totalEarned;?></span> </p>
+<p class="rw-spent">Total Spent: <span class="rw-point-spent"><?php echo $totalSpent;?></span> </p>
+</div>
+
+
+

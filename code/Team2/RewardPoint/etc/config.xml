@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <rwpoint_section>
+            <general>
+                <enable>1</enable>
+            </general>
+            <point_earn_calc>
+                <point_spendr>1</point_spendr>
+                <point_earnr>1</point_earnr>
+            </point_earn_calc>
+            <order_limit>
+                <min_point>1</min_point>
+                <redem_order>5</redem_order>
+            </order_limit>
+        </rwpoint_section>
+    </default>
+</config>

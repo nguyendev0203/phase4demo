@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config>
+	<section name="quote">
+        <group name="totals">
+            <item name="giftwrap" instance="Team3Vendor\GiftwrapSlider\Model\Total\Quote\GiftwrapCustom" sort_order="300"/>
+        </group>
+	</section>	
+</config>

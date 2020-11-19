@@ -1,0 +1,9 @@
+<div class="header-main-logo">
+<!-- <img src='<?php echo $this->getViewFileUrl('images/logo.png'); ?>' alt="Demo"> -->
+<?php
+echo $this->getLayout()
+->createBlock('Magento\Cms\Block\Block')
+->setBlockId('main-header-logo')
+->toHtml();
+?>
+</div>

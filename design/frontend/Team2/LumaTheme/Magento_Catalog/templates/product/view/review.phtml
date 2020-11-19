@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\AbstractProduct */ ?>
+<?= $block->getReviewsSummaryHtml($block->getProduct(), false, true) ?>
+<?php
+if ((int)$block->getProduct()->getReviewsCount() == 0) { ?>
+    <div class="cont-info">
+        <div class="rating-summary" id="rating-summary-none">
+            <div class="rating-result" title="0%">
+                <span style="width: 0%;"><span>0%</span></span>
+            </div>
+        </div>
+        <hr class="verticle">
+        <a class="action add" href="<?php echo ($block->getProduct()->getProductUrl()) ?>#review-form">
+            Be the first to review this product </a>
+    </div>
+
+<?php
+} 
+?>

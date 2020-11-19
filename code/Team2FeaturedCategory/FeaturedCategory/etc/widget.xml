@@ -1,0 +1,7 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Team2FeaturedCategory\FeaturedCategory\Block\Widget\FeaturedCategory" id="featured_widget">
+        <label>Featured category</label>
+        <description>This is a FeaturedCategory</description>
+    </widget>
+</widgets>

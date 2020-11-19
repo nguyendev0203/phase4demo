@@ -1,0 +1,22 @@
+{
+    "name": "vendor_name/view",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "nguyenduyhung",
+            "email": "nguyenduyhunga7@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "~7.2.0||~7.4.10",
+        "magento/framework": "*",
+        "magento/theme-frontend-blank": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

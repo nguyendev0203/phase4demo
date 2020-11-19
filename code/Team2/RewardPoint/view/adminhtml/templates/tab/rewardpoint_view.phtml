@@ -1,0 +1,147 @@
+<?php
+$totalEarned = 0;
+$totalSpent = 0;
+$pointCollectionFactory=$block->getPointCollection();
+$customerIdRewardPoint = $block->getCustomerId();
+foreach ($pointCollectionFactory as $row):?>
+    <h1><b><?=$row['point'];?></b></h1>
+            <?php $point = $row['point'];?>
+<?php endforeach;?>
+<?php //print_r($pointCollectionFactory); ?>
+<h1>Current Balance</h1>
+<hr/>
+<?php
+$hisCollectionPoint=$block->getHisCollection();
+    foreach ($hisCollectionPoint as $count):
+    if (($count['action'] == 'Admin Point Change' && $count['point'] >= 0) || $count['action'] == 'Order Completed') {
+        $totalEarned += $count['point'];
+    }
+    if ($count['point'] <= 0) {
+        $totalSpent += $count['point'];
+    } ?>
+<?php endforeach;?>
+<h2>Total Earned:<?php echo $totalEarned;?></h2>
+<h2>Total Spent:<?php echo $totalSpent * -1 ;?></h2>
+
+
+<button type="button" id="openModel" class="btn btn-primary">Add or Deduct Points</button>
+<div id="myModel">
+    <form action="<?php  echo $block->getBaseUrl().'abcd/hello/add';?>" method="post" id="form_validate contact-form" data-mage-init='{"validation": {}}'>
+    <fieldset class="admin__fieldset" data-bind="foreach: {data: elems, as: 'element'}">
+        <div class="admin__field _required"
+             data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible"
+             data-index="frontend_input">
+            <div class="admin__field-label" data-bind="visible: $data.labelVisible">
+                <label data-bind="attr: {for: uid}" for="D2XJLA2">
+                    <span data-bind="attr: {'data-config-scope': $data.scopeLabel}, i18n: label">Action</span>
+                </label>
+            </div>
+            <div class="admin__field-control"
+                 data-bind="css: {'_with-tooltip': $data.tooltip, '_with-reset': $data.showFallbackReset &amp;&amp; $data.isDifferedFromDefault}">
+                <select class="admin__control-select" name="frontend_input" id="D2XJLA2"
+                        aria-describedby="notice-D2XJLA2">
+                    <option data-title="<?= _('Add') ?>" value="<?= _('Add') ?>"><?= __('Add') ?></option>
+                    <option data-title="<?= _('Deduct') ?>" value="<?= _('Deduct') ?>"><?= __('Deduct') ?></option>
+                </select>
+                <div class="admin__field-note">
+                    <span data-bind="i18n: $data.hints[$data.value()]"></span>
+                </div>
+            </div>
+        </div>
+        <div class="admin__field _required"
+             data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible"
+             data-index="frontend_label[0]">
+            <div class="admin__field-label" data-bind="visible: $data.labelVisible">
+                <label data-bind="attr: {for: uid}" for="AQAJWJM">
+                    <span data-bind="attr: {'data-config-scope': $data.scopeLabel}, i18n: label">Amount</span>
+                </label>
+            </div>
+            <div class="admin__field-control"
+                 data-bind="css: {'_with-tooltip': $data.tooltip, '_with-reset': $data.showFallbackReset &amp;&amp; $data.isDifferedFromDefault}">
+                <input class="admin__control-text" type="text" name="" id="AQAJWJM" maxlength="255">
+            </div>
+        </div>
+        <div class="admin__field _required"
+             data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible"
+             data-index="frontend_label[0]">
+            <div class="admin__field-label" data-bind="visible: $data.labelVisible">
+                <label data-bind="attr: {for: uid}" for="AQAJWJN">
+                    <span data-bind="attr: {'data-config-scope': $data.scopeLabel}, i18n: label">Comment</span>
+                </label>
+            </div>
+            <div class="admin__field-control"
+                 data-bind="css: {'_with-tooltip': $data.tooltip, '_with-reset': $data.showFallbackReset &amp;&amp; $data.isDifferedFromDefault}">
+                <textarea class="admin__control-text" type="textarea" name="" id="AQAJWJN" maxlength="255"></textarea>
+            </div>
+        </div>
+        <div>
+            <input type="hidden" id="customerIdRewardPoint" value="<?php echo $customerIdRewardPoint; ?>">
+        </div>
+        <div>
+            <input type="hidden" id="customerPoint" value="<?php echo $point; ?>">
+        </div>
+
+    </fieldset>
+    </form>
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal',
+            'mage/url'
+        ],
+        function($,modal,url) {
+            var options = {
+                type: 'slide',
+                responsive: true,
+                innerScroll: true,
+                title: '',
+                buttons: [{
+                    text: $.mage.__('Apply'),
+                    class: 'action-primary',
+                    click: function () {
+
+                        var ajaxUrl = url.build('/admin/rewardpoint/hello/add');
+                        var action = $("#D2XJLA2").val();
+                        var amount = $("#AQAJWJM").val();
+                        var comment = $("#AQAJWJN").val();
+                        var cusId = $("#customerIdRewardPoint").val();
+                        var point = $("#customerPoint").val();
+                        // console.log(action,amount,comment);
+
+                        var data = {
+                            'form_key': window.FORM_KEY,
+                            'data' : this.applied
+                        };
+
+                        $.ajax(
+                            {
+                                type: 'POST',
+                                url: ajaxUrl,
+                                data: {
+                                    action: action,
+                                    amount: amount,
+                                    comment: comment,
+                                    cusId: cusId,
+                                    point: point
+                                },
+                                showLoader: true,
+                                // success:function (data){
+                                //     alert(data) ;
+                                //     console.log(data);
+                                // }
+                            });
+
+                        this.closeModal();
+                    }
+                }]
+            };
+            var popup = modal(options, $('#myModel'));
+            $("#openModel").on("click",function(){
+                $('#myModel').modal('openModal');
+            });
+        }
+    );
+</script>
+

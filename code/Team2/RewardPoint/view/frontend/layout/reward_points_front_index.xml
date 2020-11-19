@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="Team2_RewardPoint::css/RewardPoint.css" />
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">My Rewards</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Team2\RewardPoint\Block\Adminhtml\CustomerEdit\Tab\RewardPoint" name="custom_tab_sk1" template="Team2_RewardPoint::rewardpoint_points.phtml" />
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,120 @@
+
+.reviews-actions {
+    display: none !important;
+}
+
+/*product upsell carousel */
+.product-upsell-hung .product-item-details .product-item-name {
+    display: inherit;
+    hyphens: auto;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all .9s ease-out;
+    font: 400 1.5rem "Poppins","Open Sans",sans-serif;
+    text-align: center;
+}
+.product-upsell-hung .product-item-details .product.name .product-item-link {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+.product-upsell-hung .product-item-details .rating-summary {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+}
+.product-upsell-hung .product-item-details  .price-box {
+    display: flex;
+    justify-content: center;
+    font: 600 1.8rem/0.8 "Poppins","Open Sans",sans-serif !important;
+    flex-direction: row-reverse;
+}
+/* .product-upsell-hung .product-item-details  .product-reviews-summary .rating-summary {
+    position: relative;
+    text-align: left;
+    left: 0%;
+} */
+.product-upsell-hung .product-item-name {
+    width: 15rem;
+}
+/* */
+abs-product-link > a:hover, .product-item-name > a:hover, .product.name a > a:hover {
+    color: #7686CC;
+    text-decoration: none;
+}
+
+/*CUSTOM CORE OF OWL-CAROUSEL*/
+#owlcarousel_upsell {
+    bottom: 2.5rem;
+}
+#owlcarousel_upsell .owl-dots {
+    display: flex;
+    top: -4.1rem;
+    position: absolute;
+    right: 2rem;
+}
+.owl-dots .owl-dot span {
+    height: 4px !important;
+    width: 4px !important;
+    margin: 3px !important;
+    background: #ffffff !important;
+    /* display: none !important; */
+}
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #6263A6 !important;
+}
+.owl-dots .owl-dot {
+    border-radius: 50% !important;
+    border: 2px solid black !important;
+    height: 14px !important;
+    margin: 5%;
+    width: 15px;
+}
+
+/*custom core button owl-carousel*/
+.owl-carousel .owl-nav button.owl-prev {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+}
+.owl-carousel .owl-nav button.owl-next {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+}
+
+/*product img hover */
+.product-upsell-hung .zoom-image .product-image-wrapper {
+    transition: transform .9s;
+    margin: 0 auto;
+}
+  
+.product-upsell-hung .zoom-image .product-image-wrapper:hover {
+    -ms-transform: scale(1.18); /* IE 9 */
+    -webkit-transform: scale(1.18); /* Safari 3-8 */
+    transform: scale(1.18); 
+    box-shadow: 1px 1px 1px 1px#888888;
+    border: 2px solid #adc9ed;
+}
+#owlcarousel_upsell .owl-stage-outer .owl-stage .owl-item {
+    padding: 2rem 0 0 2rem;
+}
+.product-upsell-hung .product-item-details {
+    padding-top: 1rem;
+}
+
+/* fix price*/
+.special-price .price-box .price-final_price .price-label {
+    display:none;
+}
+.old-price .price-box .price-final_price .price-label {
+    display:none;
+}
+.special-price .price-final_price .price-wrapper .price {
+    margin-left: 1rem;
+}
+
+.product-item .price-box .price-label {
+    display: none;
+}

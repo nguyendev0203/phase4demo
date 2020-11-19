@@ -1,0 +1,101 @@
+/**/
+.products.wrapper.products-related {
+    position: relative;
+}
+.catalog-product-view span.slide-nav {
+    position: absolute;
+    top: -30px;
+    right: 0;
+
+}
+.catalog-product-view span.prev-btn.slick-arrow{
+    cursor: pointer;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+}
+
+#related .product-image-container {
+    width: 60px;
+}
+
+.catalog-product-view .sidebar .product-items .price-box {
+    display: inline-flex;
+    margin: auto;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+.catalog-product-view .sidebar .product-items .product-item-info .product-item-photo .col-5 {
+    padding: 15px 0 0 15px;
+}
+.catalog-product-view .sidebar .product-items .product-item-details.col-6 {
+    padding: 0;
+}
+#related .product-item-name, .product.name a {
+    font-weight: 600;
+}
+#related .price-box.price-final_price {
+
+}
+#related .product-item-details .rating-summary .rating-result::before {
+    font-size: 2.2rem;
+}
+@media only screen and (max-width: 1024px) {
+    #related .product-item-details .rating-summary .rating-result::before {
+        font-size: 2.2rem;
+    }
+}
+
+/*responsive html block*/
+@media only screen and (max-width: 834px) {
+    #related .row {
+        flex-wrap: inherit;
+    }
+    #related .product-item-details .rating-summary .rating-result::before {
+        font-size: 20px;
+    }
+    #related .special-price .price {
+        font-size: 1rem;
+    } 
+    #related .old-price .price {
+        font-size: 1rem;
+    } 
+    #related .product-item-name, .product.name a {
+        font-size: 1.1rem;
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+    .block.related {
+       display: none;
+     }
+}
+
+.icon-chevron-right:before {
+    content: "\f054";
+}
+.icon-chevron-left:before {
+    content: "\f053";
+}
+/*Fix name product detail page*/
+.product-info-main .page-title-wrapper .page-title {
+    line-height: 1.42857143;
+    margin-bottom: 10px;
+    font-weight: 900 !important;
+    text-transform: capitalize !important;
+}
+.catalog-product-view  .related .block-content h4 {
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+    text-decoration: none;
+    font: 600 1.2rem/1.1 "Poppins","Open Sans",sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all .2s ease-out
+}
+#related .rating-summary {
+    overflow: unset;
+}

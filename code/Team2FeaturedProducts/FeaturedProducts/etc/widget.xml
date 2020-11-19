@@ -1,0 +1,25 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Team2FeaturedProducts\FeaturedProducts\Block\Widget\FeaturedProducts" id="feats_widget">
+        <label>WIDGET FEATURED PRODUCTS</label>
+        <description>This is a featured product widget!!!</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Title</label>
+            </parameter>
+            <parameter name="numberProduct" xsi:type="text" required="true" visible="true" sort_order="15">
+                <label>Number Product Display</label>
+            </parameter>
+            <parameter name="numberCategory" xsi:type="text" required="true" visible="true" sort_order="15">
+                <label>Number Category Display</label>
+            </parameter>
+             <parameter name="widthImage" xsi:type="text" required="true" visible="true" sort_order="15">
+                <label>Width Image Product</label>
+            </parameter>
+             <parameter name="heightImage" xsi:type="text" required="true" visible="true" sort_order="15">
+                <label>Height Image Product</label>
+            </parameter>
+        </parameters>
+
+    </widget>
+</widgets>

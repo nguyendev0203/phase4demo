@@ -1,0 +1,16 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/style.css"/>
+        <!-- <css src="https://use.fontawesome.com/releases/v5.7.0/css/all.css" src_type="url"/> -->
+        <css src="css/local.css"/>
+        <css src="css/banner.css"/>
+         <css src="css/banner-text.css"/>
+        <css src="css/bootstrap.min.css"/>
+        <css src="css/feature.css"/>
+        <css src="css/listingPage.css"/>
+        <css src="css/detailPage.css"/>
+        <css src="css/slick.css"/>
+        <css src="css/carouselRelatedProduct.css"/>
+        <css src="css/carouselUpsellProduct.css"/>
+    </head>
+</page>

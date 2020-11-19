@@ -1,0 +1,10 @@
+    <?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <size_guide>
+            <size_guide_group>
+                <size_table_name>Clothing - Single Size Conversion</size_table_name>
+            </size_guide_group>
+        </size_guide>
+    </default>
+</config>

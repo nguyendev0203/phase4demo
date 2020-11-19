@@ -1,0 +1,33 @@
+<?php
+
+/** @var \Magento\Review\Block\Product\ReviewRenderer $block */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+
+$url = $block->getReviewsUrl() . '#reviews';
+$urlForm = $block->getReviewsUrl() . '#review-form';
+?>
+<?php if ($block->getReviewsCount()==0):?>
+    <?php $rating = 0;?>
+<?php elseif($block->getReviewsCount()):?>
+    <?php $rating = $block->getRatingSummary();?>
+<?php endif; ?>
+<?php if ($block->isReviewEnabled()): ?>
+    <div class="product-reviews-summary short<?= !$rating ? ' no-rating' : '' ?>">
+        <div class="rating-summary">
+            <span class="label"><span><?= $block->escapeHtml(__('Rating')) ?>:</span></span>
+            <div class="rating-result"
+                 id="rating-result_<?= /* @noEscape */ $block->getProduct()->getId() ?>"
+                 title="<?= $block->escapeHtmlAttr($rating) ?>%">
+                <span style="width: <?= $block->escapeHtmlAttr($rating) ?>%">
+                    <span>
+                        <?= $block->escapeHtml($rating) ?>%
+                    </span>
+                </span>
+            </div>
+            <?= /* @noEscape */ $secureRenderer->renderStyleAsTag(
+                'width:' . $block->escapeHtmlAttr($rating) . '%',
+                '#rating-result_' . $block->getProduct()->getId() . ' span'
+            ) ?>
+        </div>
+    </div>
+<?php endif; ?>

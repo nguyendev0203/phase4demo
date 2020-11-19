@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<div id="gift-options-cart" data-bind="scope:'giftOptionsCart'">
+    <!-- Make sure we try to load the knockout stack of components only if we are in the cart page. -->
+    <? if( $block->getRequest()->getFullActionName() === 'checkout_cart_index'): ?>
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <script type="text/x-magento-init">
+            {
+                "#gift-options-cart": {
+                    "Magento_Ui/js/core/app": <?= /* @escapeNotVerified */ $block->getJsLayout() ?>
+                }
+            }
+        </script>
+    <? endif ?>
+    <script>
+        window.giftOptionsConfig = <?= /* @escapeNotVerified */ $block->getGiftOptionsConfigJson() ?>;
+    </script>
+</div>

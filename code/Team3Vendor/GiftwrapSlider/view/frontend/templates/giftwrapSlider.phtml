@@ -1,0 +1,245 @@
+<?php  
+$giftwraps = $block->getCollection();
+$giftwrapArr = array();
+
+foreach ($giftwraps as $giftwrap) {
+	array_push($giftwrapArr, $giftwrap->getData());
+}
+
+// print_r($giftwrapArr);
+
+
+// exit();
+?>
+
+<input type="checkbox" id="isUseGift" name="isUseGift" >
+<label id="isUseGiftLabel" for="isUseGift"> Make It a Gift</label>
+
+<div id="giftArea">
+
+    <p id="giftwrapNotice">Item(s) will be sent packaged in a gift box. Please remember, once enclosed you will be unable to see the contents of the package.</p>
+
+    <p id="giftwrapHeader">Choose the Gift Wrap</p>
+
+    <div class="giftwrap">
+        <div class="owl-carousel">
+            <?php foreach($giftwrapArr as $data): ?>
+                <div class="giftwrap-slider-item giftwrap<?= $data['giftwrap_id']; ?>">
+                    <img src="<?= $block->getBaseImgUrl(),$data['image']; ?>" class="giftwrapImage">
+                    <p class="giftwrapTitle"><?= $data['title']; ?></p>
+                    <p class="giftwrapPrice"><?= $block->getCurrentCurrencySymbol(),$data['price']; ?></p>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+
+    <p id="giftMessageHeader">Add Gift Message</p>
+
+    <textarea id="giftmessageContent" rows="2" cols="50">
+        
+    </textarea>
+
+    <input type="checkbox" id="isHiddenPrice" name="isHiddenPrice" >
+    <label for="isHiddenPrice"> Hidden prices on the recipient's receipt</label>
+
+</div>
+
+<script>
+    require(["jquery", "owl-carousel"],function($) {
+        $(document).ready(function() {
+            // console.log(123123)
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                responsiveClass:true,
+                navText: [
+                    '<span class="prev-btn"><i class="fas fa-chevron-left" style="font-size: 20px; color: #727272;"></i></span>',
+                    '<span class="next-btn"><i class="fas fa-chevron-right" style="font-size: 20px; color: #727272;"></i></span>'
+                ],
+                responsive:{
+                    0:{
+                        items:2,
+                        nav:true,
+                        loop:false
+                    },
+                    426:{
+                        items:4,
+                        nav:true,
+                        loop:false
+                    },
+                    1000:{
+                        items:4,
+                        nav:true,
+                        loop:false
+                    }
+                }
+            })
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    require(['jquery'], function($) {
+        $(document).ready(function(){
+            var isUseGiftChecked = localStorage.getItem("isUseGift");
+            if (isUseGiftChecked == 1) {
+                isUseGiftChecked = true;
+                selectedGiftwrap = localStorage.getItem("selectedGiftwrap");
+                $("."+selectedGiftwrap).addClass("active");
+            } else {
+                isUseGiftChecked = false;
+            }
+            $("#isUseGift").prop('checked', isUseGiftChecked);
+            if($("#isUseGift").prop('checked') == true) {
+                    $("#giftArea").css({"display": "block"});  // checked
+            }
+            else {
+                $("#giftArea").css({"display": "none"});  // unchecked
+            }
+
+            
+
+            $(".giftwrap-slider-item").click(function(event) {
+	           	// console.log($(this).find('.giftwrapPrice').text());
+	           	var setGiftwrapUrl = "<?php echo $this->getUrl().'giftwrapslider/giftwrap/giftwrap'?>";
+                localStorage.setItem("selectedGiftwrap", 1);
+                var myClass = $(this).attr("class");
+                myClass = myClass.split(/\s+/);
+                localStorage.setItem("selectedGiftwrap", myClass[1]);
+	            $.ajax({
+	                url: setGiftwrapUrl,
+	                type: 'POST',
+	                data: {
+	                    giftwrapprice: $(this).find('.giftwrapPrice').text(),
+                        giftwrapname: $(this).find('.giftwrapTitle').text()
+	                },
+	            	
+	            	complete: function(response) {                    
+		                console.log("Giftwrap set");
+		                console.log(response);   
+		                // location.reload();
+	                },
+                    success: function(data, status, xhr) {
+                        grandtotal = data.grandtotal.toFixed(2);
+                        $(".totals.giftwrap.excl > th").html('Giftwrap ' + data.giftwrapname);
+                        $(".totals.giftwrap.excl > td > span").html(data.giftwrap);
+                        $(".grand.totals > td > strong > .price").html("<?= $block->getCurrentCurrencySymbol() ?>"+grandtotal);
+                        $(".checkout-index-index .estimated-block .estimated-price").html("<?= $block->getCurrentCurrencySymbol() ?>"+grandtotal);
+                        $(".giftwrap-slider-item.active").removeClass("active");
+                        $("."+myClass[1]).addClass("active");
+                    },
+
+                	error: function (xhr, status, errorThrown) {
+	                    console.log('Error happens. Try again.');
+	                    console.log(errorThrown);
+	                }
+	            });
+
+	        });
+
+            $('#giftmessageContent').bind('input propertychange', function() {
+                var setGiftmessageUrl = "<?php echo $this->getUrl().'giftwrapslider/giftwrap/giftmessage'?>";
+                $.ajax({
+                    url: setGiftmessageUrl,
+                    type: 'POST',
+                    data: {
+                        giftmessage: $(this).val(),
+                    },
+                    
+                    complete: function(response) {                    
+                        console.log("Giftmessage set");
+                        console.log(response);   
+                    },
+
+                    error: function (xhr, status, errorThrown) {
+                        console.log('Error happens. Try again.');
+                        console.log(errorThrown);
+                    }
+                });
+            });
+
+            $("#isUseGift").change(function() {
+                if($("#isUseGift").prop('checked') == true) {
+                    $("#giftArea").css({"display": "block"});  // checked
+                    localStorage.setItem("isUseGift", 1);
+                }
+                else {
+                    // $("#giftArea").css({"display": "none"});  // unchecked
+                    var removegiftUrl = "<?php echo $this->getUrl().'giftwrapslider/giftwrap/removegift'?>";
+                    localStorage.setItem("isUseGift", 0);
+                    $.ajax({
+                        url: removegiftUrl,
+                        type: 'POST',
+                        data: {
+                        },
+                        
+                        complete: function(response) {                    
+                            console.log("Remove gift");
+                            console.log(response);   
+                            // location.reload();
+                        },
+
+                        success: function(data, status, xhr) {
+                            $("#giftArea").css({"display": "none"});
+                            grandtotal = data.grandtotal.toFixed(2);
+                            $(".totals.giftwrap.excl > th").html('Giftwrap');
+                            $(".totals.giftwrap.excl > td > span").html('<?= $block->getCurrentCurrencySymbol() ?>0.00');
+                            $(".grand.totals > td > strong > .price").html("<?= $block->getCurrentCurrencySymbol() ?>"+grandtotal);
+                            $(".giftwrap-slider-item.active").removeClass("active");
+                            localStorage.removeItem("isUseGift");
+                            localStorage.removeItem("selectedGiftwrap");
+                        },
+
+                        error: function (xhr, status, errorThrown) {
+                            console.log('Error happens. Try again.');
+                            console.log(errorThrown);
+                        }
+                    });
+                }
+            });
+
+            $(".giftwrapImage").height(150);
+            if ($(window).width() >= 768) { 
+                $(".giftwrapImage").height(100);
+            }
+            if ($(window).width() >= 1024) { 
+                $(".giftwrapImage").height(135);
+            }
+            if ($(window).width() >= 1440) { 
+                $(".giftwrapImage").height(150);
+            }
+                
+
+            $(".action.primary.checkout").click(function() {
+                localStorage.removeItem("isUseGift");
+                localStorage.removeItem("selectedGiftwrap");
+            });        
+        });
+
+        // $(".giftwrapImage").ready(function(){
+        //     giftwrapImgWidth = $(".giftwrapImage").width();
+        //     $(".giftwrapImage").height(giftwrapImgWidth);
+        // });
+
+
+        
+
+        $(window).on('resize', function(){
+            var win = $(this); //this = window
+            $(".giftwrapImage").height(150);
+            if (win.width() >= 768) { 
+                $(".giftwrapImage").height(90);
+            }
+            if (win.width() >= 1024) { 
+                $(".giftwrapImage").height(135);
+            }
+            if (win.width() >= 1440) { 
+                $(".giftwrapImage").height(150);
+            }
+            
+            
+        });
+    });
+</script>
+

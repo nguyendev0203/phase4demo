@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_save_after">
+        <observer name="team2_rewardpoint_add_action_rewardpoint" instance="Team2\RewardPoint\Observer\AddActionCompletedRewardPointToOrderObserver" />
+    </event>
+    <!-- <event name="payment_cart_collect_items_and_amounts">
+        <observer name="magecomp_extrafee_payment_collect_total" instance="Magecomp\Extrafee\Observer\Addfeetopaypal" />
+    </event> -->
+</config>

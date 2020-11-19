@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="content">
+        	<referenceContainer name="order_totals">
+	            <block class="Team3Vendor\GiftwrapSlider\Block\Adminhtml\Sales\Totals" name="giftwrap"/>
+	        </referenceContainer>
+        	<block class="Team3Vendor\GiftwrapSlider\Block\Adminhtml\Sales\Giftmessage" template="Team3Vendor_GiftwrapSlider::order/view/giftmessage.phtml" name="giftmessage"/>
+    	</referenceContainer>
+    </body>
+</page>

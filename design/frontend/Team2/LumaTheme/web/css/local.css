@@ -1,0 +1,342 @@
+section {
+    margin-bottom: -3rem;
+    padding-top: 1rem;
+}
+
+.home-banner {
+    padding-bottom: 2rem;
+    position: relative;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    margin-bottom: -3rem;
+}
+
+.height-x3 {
+    height: 380px;
+}
+
+.home-banner figure {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.home-banner figure img {
+    object-fit: cover;
+    object-position: 75%;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 320px;
+    vertical-align: middle;
+    border-style: none;
+}
+#shopbutton {
+    text-decoration: none;
+    color: white;
+}
+@media only screen and (max-width: 768px) {
+    #shopbutton {
+        text-decoration: none;
+        color: #606ea6;
+    }
+}
+
+.imagebanner {
+    height: 300px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+.home-banner .banner-content {
+    position: absolute;
+    font-family: "Poppins", "Open Sans", sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-transform: uppercase;
+    z-index: 2;
+    padding: 0 1rem;
+}
+
+.container {
+    max-width: 80.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+.home-banner .banner-content.full-content .left-content {
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.home-banner .banner-content {
+    font-family: "Poppins", "Open Sans", sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.cms-home .banner-content {
+    width: 100%;
+    min-height: 1px;
+}
+
+.home-banner .banner-content {
+    font-family: "Poppins", "Open Sans", sans-serif;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.home-banner .banner-content.full-content .banner-info {
+    margin: 4rem 0;
+    transform: skew(2deg, -3deg);
+}
+
+.home-banner .banner-content.full-content .banner-info a.btn {
+    background-color: #fff;
+    color: #222529;
+    /* font-size: 2.5rem; */
+    text-transform: none;
+    padding: 1.2rem 1.7rem;
+    text-decoration: none;
+}
+
+.home-banner .banner-content .banner-info a.btn {
+    font: 700 2.4rem "Open Sans", sans-serif;
+    font-size: 2.4rem;
+    color: #fff;
+    background-color: #222529;
+    padding: 1rem 1.5rem;
+    letter-spacing: 0.01em;
+    border: none;
+    margin-bottom: 4px;
+}
+
+.home-banner .banner-content.full-content .banner-info .sale-off {
+    font-size: 2.67rem;
+    color: #fff;
+}
+
+.home-banner .banner-content .banner-info .sale-off {
+    font: 700 2.14rem "Open Sans", sans-serif;
+    font-size: 2.14rem;
+    color: #222529;
+    text-transform: uppercase;
+    text-align: left;
+    position: relative;
+}
+
+.home-banner .banner-content.full-content .banner-info .sale-off span {
+    font-size: 4.32rem;
+    background-color: #606da6;
+    padding: 0 1.5rem;
+    margin-right: 2rem;
+}
+
+.home-banner .banner-content .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.home-banner .banner-content.full-content {
+    left: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+figure {
+    display: block;
+}
+
+.home-banner .banner-content.full-content span {
+    font: 700 14px "Open Sans", sans-serif;
+}
+
+.home-banner .banner-content span {
+    color: #fff;
+    opacity: 0.5;
+    font-size: 1.2rem;
+    letter-spacing: 0.025em;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.home-banner .banner-content h4 {
+    color: #fff;
+}
+
+.home-banner .banner-content.full-content h4 {
+    text-transform: none;
+    letter-spacing: 0.01em;
+    margin-bottom: 1rem;
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.home-banner .banner-content.full-content button {
+    color: #fff;
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+.home-banner .banner-content.full-content button i {
+    font-size: 1.6rem;
+}
+.home-banner .banner-content.full-content button:hover {
+    background-color: brown;
+}
+
+.home-banner .banner-content .btn {
+    color: #606da6;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    background: transparent;
+    border: 2px solid #e7e7e7;
+    font-weight: 700;
+}
+
+.home-banner .banner-content.full-content .banner-info .sale-off::before {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.home-banner .banner-content .banner-info .sale-off::before {
+    content: "UP TO";
+    font: 700 1.34rem "Open Sans", sans-serif;
+    font-size: 1.34rem;
+    letter-spacing: 0;
+    color: #222529;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-80%, -50%) rotate(-90deg);
+}
+
+@media (min-width: 768px) {
+    /* .cms-index-index .page-main {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        width: auto;
+    } */
+
+    /* .column.main > table,
+    .column.main > .product.data.items,
+    .column.main > .block-bestseller-products,
+    .column.main > .mb-0 {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: auto;
+    } */
+}
+/*Responsive*/
+@media (max-width: 1199px) {
+    .home-banner .banner-content.full-content {
+        left: 0%;
+    }
+}
+
+@media (max-width: 991px) {
+    .home-banner .banner-content.full-content {
+        left: 0%;
+    }
+
+    .home-banner .banner-content .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .figure img {
+        height:410px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-banner .banner-content.full-content {
+        left: 0%;
+    }
+
+    .height-x3 {
+        height: 440px;
+    }
+}
+
+@media (max-width: 575px) {
+    .home-banner .banner-content.full-content {
+        left: 00%;
+    }
+
+    .height-x2 {
+        height: 420px;
+    }
+}
+
+@media (max-width: 479px) {
+    .home-banner .banner-content.full-content {
+        left: 0%;
+    }
+
+    .home-banner .banner-content.full-content {
+        top: 43%;
+        transform: translateY(-50%);
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+    /*hung*/
+    .home-banner .banner-content.full-content .left-content {
+        margin-right: -4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+/*Dieu chinh layout*/
+/* .container-fluid, .mb-0, .chinh{
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+} */
+
+/* khoang trong */
+.trong {
+    height: 80px;
+    position: relative;
+    background: white;
+    bottom: 90px;
+    z-index: 1;
+    width: 100%;
+}
+
+/*hung fix*/
+.banner-footer-container section {
+    padding: 0;
+    margin: 0;
+}

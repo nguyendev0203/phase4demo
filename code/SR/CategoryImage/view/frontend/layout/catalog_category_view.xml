@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="SR_CategoryImage::css/cate-banner.css" />
+    </head>
+    <body>
+
+        <referenceContainer name="category.view.container">
+            <container name="container.row" htmlClass="row cate-banner" htmlTag="div">
+                <container name="container.1height-x1" htmlClass="grid-item col-lg-6 ct-height-x1" htmlTag="div">
+                    <container name="container.ct-home-banner" htmlClass="ct-home-banner row" htmlTag="div">
+                        <container name="container.col-12" htmlClass="col-12" htmlTag="div">
+
+                        </container>
+                    </container>
+                </container>
+                <container name="container.2height-x1" htmlClass="grid-item col-lg-6 ct-height-x1" htmlTag="div">
+                    <container name="container.row-sm" htmlClass="row row-sm" htmlTag="div">
+                        <container name="container.bn1" htmlClass="col-5 col-lg-5 col-sm-5 pad-ding1" htmlTag="div">
+                            <container name="container.ct-home-banner1" htmlClass="ct-home-banner" htmlTag="div">
+                                <block class="SR\CategoryImage\Block\Image" name="sr.category.image" template="SR_CategoryImage::image.phtml">
+                                    <arguments>
+                                        <argument name="image_code" xsi:type="string">thumbnail</argument>
+                                        <argument name="css_class" xsi:type="string">thumbnail</argument>
+                                    </arguments>
+                                </block>
+                            </container>
+                        </container>
+                        <container name="container.bn2" htmlClass="col-7 col-lg-7 col-sm-7 pad-ding2" htmlTag="div">
+                            <container name="container.ct-home-banner2" htmlClass="ct-home-banner" htmlTag="div">
+                                <block class="SR\CategoryImage\Block\Image" name="sr.category.mobile.image" template="SR_CategoryImage::image.phtml">
+                                    <arguments>
+                                        <argument name="image_code" xsi:type="string">image_mobile</argument>
+                                        <argument name="css_class" xsi:type="string">image_mobile</argument>
+                                    </arguments>
+                                </block>
+                            </container>
+                        </container>
+
+
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="page.main.title" remove="true"/>
+        <move element="bottom.description" destination="container.ct-home-banner1"/>
+        <move element="description.bottom" destination="container.ct-home-banner2"/>
+        <move element="category.image" destination="container.col-12"/>
+        <move element="category.description" destination="container.col-12"/>
+        <move element="breadcrumbs" destination="columns.top"/>
+    </body>
+</page>

@@ -1,0 +1,283 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerLeft" id="custom_mainbanner_left">
+        <label> Main banner left </label>
+        <description>Main banner left 3 images</description>
+            
+        <parameters>
+            <!-- BANNER LEFT IMAGE 1 -->
+            <parameter name="main_banner_left_1_title" sort_order="10" visible="true" xsi:type="text">
+                <label>Title image 1</label>
+            </parameter>
+             <parameter name="main_banner_left_1_content" sort_order="10" visible="true" xsi:type="text">
+                <label>Text image 1</label>
+            </parameter>
+            <parameter name="main_banner_left_1_link" sort_order="10" visible="true" xsi:type="text">
+                <label>Link image 1</label>
+            </parameter>
+            <parameter name="main_banner_left_1_promo" sort_order="10" visible="true" xsi:type="text">
+                <label>Promo image 1</label>
+            </parameter>
+            <parameter name="main_banner_left_1_button" sort_order="10" visible="true" xsi:type="text">
+                <label>Text button image 1</label>
+            </parameter>
+             <parameter name="main_banner_left_1_button_link" sort_order="10" visible="true" xsi:type="text">
+                <label>Link button image 1</label>
+            </parameter>
+             <parameter name="main_banner_left_1_image" xsi:type="block" required="true" visible="true" sort_order="10">
+                <label translate="true">Insert an image 1 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerLeft">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <!-- BANNER LEFT IMAGE 2 -->
+            <parameter name="main_banner_left_2_title" sort_order="20" visible="true" xsi:type="text">
+                <label>Title image 2</label>
+            </parameter>
+             <parameter name="main_banner_left_2_content" sort_order="20" visible="true" xsi:type="text">
+                <label>Text image 2</label>
+            </parameter>
+            <parameter name="main_banner_left_2_link" sort_order="20" visible="true" xsi:type="text">
+                <label>Link image 2</label>
+            </parameter>
+           
+             <parameter name="main_banner_left_2_image" xsi:type="block" required="true" visible="true" sort_order="20">
+                <label translate="true">Insert an image 2 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerLeft">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+
+            <!-- BANNER LEFT IMAGE 3 -->
+            <parameter name="main_banner_left_3_title" sort_order="30" visible="true" xsi:type="text">
+                <label>Title image 3</label>
+            </parameter>
+             <parameter name="main_banner_left_3_content" sort_order="30" visible="true" xsi:type="text">
+                <label>Text image 3</label>
+            </parameter>
+            <parameter name="main_banner_left_3_link" sort_order="30" visible="true" xsi:type="text">
+                <label>Link image 3</label>
+            </parameter>
+           
+             <parameter name="main_banner_left_3_image" xsi:type="block" required="true" visible="true" sort_order="30">
+                <label translate="true">Insert an image 3 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerLeft">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="sidebar.additional">
+                <template name="default" value="list_default" />
+                <template name="names_only" value="list_names" />
+                <template name="images_only" value="list_images" />
+            </container>
+        </containers>
+    </widget>
+
+    <!-- custom banner right -->
+    <widget class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerRight" id="custom_mainbanner_right">
+        <label> Main Banner Right </label>
+        <description>Slider main banner right </description>
+            
+        <parameters>
+            <!-- slider BANNER right IMAGE 1 -->
+            <parameter name="main_banner_right_1_title" sort_order="1" visible="true" xsi:type="text">
+                <label>Title image 1</label>
+            </parameter>
+             <parameter name="main_banner_right_1_content" sort_order="2" visible="true" xsi:type="text">
+                <label>Text image 1</label>
+            </parameter>
+            <parameter name="main_banner_right_1_button" sort_order="3" visible="true" xsi:type="text">
+                <label>Button text image 1</label>
+            </parameter>
+            <parameter name="main_banner_right_1_button_link" sort_order="4" visible="true" xsi:type="text">
+                <label>Link button image 1</label>
+            </parameter>
+            <parameter name="main_banner_right_1_promo" sort_order="5" visible="true" xsi:type="text">
+                <label>Promotion image 1</label>
+            </parameter>
+             <parameter name="main_banner_right_1_price" sort_order="6" visible="true" xsi:type="text">
+                <label>Price off image 1</label>
+            </parameter>
+             <parameter name="main_banner_right_1_coupon" sort_order="7" visible="true" xsi:type="text">
+                <label>Coupon image 1</label>
+            </parameter>
+             <parameter name="main_banner_right_1_coupon_link" sort_order="8" visible="true" xsi:type="text">
+                <label>Coupon link image 1</label>
+            </parameter>
+             <parameter name="main_banner_right_1_image" xsi:type="block" required="true" visible="true" sort_order="9">
+                <label translate="true">Insert an image 1 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerRight">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <!-- slider BANNER right  IMAGE 2 -->
+             <parameter name="main_banner_right_2_title" sort_order="10" visible="true" xsi:type="text">
+                <label>Title image 2</label>
+            </parameter>
+             <parameter name="main_banner_right_2_content" sort_order="11" visible="true" xsi:type="text">
+                <label>Text image 2</label>
+            </parameter>
+            <parameter name="main_banner_right_2_button" sort_order="12" visible="true" xsi:type="text">
+                <label>Button text image 2</label>
+            </parameter>
+            <parameter name="main_banner_right_2_button_link" sort_order="13" visible="true" xsi:type="text">
+                <label>Link button image 2</label>
+            </parameter>
+            <parameter name="main_banner_right_2_promo" sort_order="14" visible="true" xsi:type="text">
+                <label>Promotion image 2</label>
+            </parameter>
+             <parameter name="main_banner_right_2_price" sort_order="15" visible="true" xsi:type="text">
+                <label>Price off image 2</label>
+            </parameter>
+             <parameter name="main_banner_right_2_coupon" sort_order="16" visible="true" xsi:type="text">
+                <label>Coupon image 2</label>
+            </parameter>
+             <parameter name="main_banner_right_2_coupon_link" sort_order="17" visible="true" xsi:type="text">
+                <label>Coupon link image 2</label>
+            </parameter>
+           
+             <parameter name="main_banner_right_2_image" xsi:type="block" required="true" visible="true" sort_order="18">
+                <label translate="true">Insert an image 2 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerRight">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+
+            <!-- slider BANNER right  IMAGE 3 -->
+             <parameter name="main_banner_right_3_title" sort_order="19" visible="true" xsi:type="text">
+                <label>Title image 3</label>
+            </parameter>
+             <parameter name="main_banner_right_3_content" sort_order="20" visible="true" xsi:type="text">
+                <label>Text image 3</label>
+            </parameter>
+            <parameter name="main_banner_right_3_button" sort_order="21" visible="true" xsi:type="text">
+                <label>Button text image 3</label>
+            </parameter>
+            <parameter name="main_banner_right_3_button_link" sort_order="22" visible="true" xsi:type="text">
+                <label>Link button image 3</label>
+            </parameter>
+            <parameter name="main_banner_right_3_promo" sort_order="23" visible="true" xsi:type="text">
+                <label>Promotion image 3</label>
+            </parameter>
+             <parameter name="main_banner_right_3_price" sort_order="24" visible="true" xsi:type="text">
+                <label>Price off image 3</label>
+            </parameter>
+             <parameter name="main_banner_right_3_coupon" sort_order="25" visible="true" xsi:type="text">
+                <label>Coupon image 3</label>
+            </parameter>
+             <parameter name="main_banner_right_3_coupon_link" sort_order="26" visible="true" xsi:type="text">
+                <label>Coupon link image 3</label>
+            </parameter>
+           
+             <parameter name="main_banner_right_3_image" xsi:type="block" required="true" visible="true" sort_order="27">
+                <label translate="true">Insert an image 3 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerRight">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="sidebar.additional">
+                <template name="default" value="list_default" />
+                <template name="names_only" value="list_names" />
+                <template name="images_only" value="list_images" />
+            </container>
+        </containers>
+    </widget>
+    <widget class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerAll" id="custom_mainbanner_all">
+        <label> Main Banner All </label>
+        <description>Slider main banner right </description>
+         <parameters>
+            <!-- BANNER LEFT IMAGE 1 -->
+            <parameter name="main_banner_left_1_title" sort_order="10" visible="true" xsi:type="text">
+                <label>Title image 1</label>
+            </parameter>
+             <parameter name="main_banner_left_1_content" sort_order="10" visible="true" xsi:type="text">
+                <label>Text image 1</label>
+            </parameter>
+            <parameter name="main_banner_left_1_link" sort_order="10" visible="true" xsi:type="text">
+                <label>Link image 1</label>
+            </parameter>
+           
+             <parameter name="main_banner_left_1_image" xsi:type="block" required="true" visible="true" sort_order="10">
+                <label translate="true">Insert an image 1 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerAll">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <!-- BANNER LEFT IMAGE 2 -->
+            <parameter name="main_banner_left_2_title" sort_order="20" visible="true" xsi:type="text">
+                <label>Title image 2</label>
+            </parameter>
+             <parameter name="main_banner_left_2_content" sort_order="20" visible="true" xsi:type="text">
+                <label>Text image 2</label>
+            </parameter>
+            <parameter name="main_banner_left_2_link" sort_order="20" visible="true" xsi:type="text">
+                <label>Link image 2</label>
+            </parameter>
+           
+             <parameter name="main_banner_left_2_image" xsi:type="block" required="true" visible="true" sort_order="20">
+                <label translate="true">Insert an image 2 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerAll">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+
+            <!-- BANNER LEFT IMAGE 3 -->
+            <parameter name="main_banner_left_3_title" sort_order="30" visible="true" xsi:type="text">
+                <label>Title image 3</label>
+            </parameter>
+             <parameter name="main_banner_left_3_content" sort_order="30" visible="true" xsi:type="text">
+                <label>Text image 3</label>
+            </parameter>
+            <parameter name="main_banner_left_3_link" sort_order="30" visible="true" xsi:type="text">
+                <label>Link image 3</label>
+            </parameter>
+           
+             <parameter name="main_banner_left_3_image" xsi:type="block" required="true" visible="true" sort_order="30">
+                <label translate="true">Insert an image 3 here</label>
+                <block class="CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerAll">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <referenceBlock name="content"> -->
+            <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="checkout" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="steps" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="billing-step" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="payment" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="payments-list" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="before-place-order" xsi:type="array">
+                                                                        <item name="children" xsi:type="array">
+                                                                            <!-- <item name="config" xsi:type="array">
+                                                                                <item name="template" xsi:type="string">Team3Vendor_GiftwrapSlider/shipping</item>
+                                                                            </item> -->
+                                                                            <item name="giftwrap-slider" xsi:type="array">
+                                                                                <!-- <item name="component" xsi:type="string">TuanAnh_DeliveryNote/js/view/DeliveryNote-view</item> -->
+                                                                                <item name="sortOrder" xsi:type="string">100</item>
+                                                                                <item name="component" xsi:type="string">Team3Vendor_GiftwrapSlider/js/view/billing/giftwrapblock</item>
+                                                                                <item name="children" xsi:type="array">
+                                                                                    <!--add here child component declaration for your step-->
+                                                                                    
+                                                                                </item>
+                                                                            </item>
+                                                                            <!--Gift Options Cart-->
+                                                                            <!-- <item name="giftOptionsCart" xsi:type="array">
+                                                                                <item name="component" xsi:type="string">Magento_GiftMessage/js/view/gift-message</item>
+                                                                                <item name="config" xsi:type="array">
+                                                                                    <item name="template" xsi:type="string">Magento_GiftMessage/gift-message</item>
+                                                                                    <item name="formTemplate" xsi:type="string">Magento_GiftMessage/gift-message-form</item>
+                                                                                </item>
+                                                                            </item> -->
+                                                                            <!--End Gift Option-->
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+
+                                    <item name="sidebar" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="summary" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="totals" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+    <!--  Start of the main content that needs to be added-->
+                                                            <item name="giftwrap" xsi:type="array">
+    <!-- The path to our js file-->
+                                                                <item name="component" xsi:type="string">Team3Vendor_GiftwrapSlider/js/view/checkout/cart/totals/giftwrap</item>
+                                                                <item name="sortOrder" xsi:type="string">20</item>
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="template" xsi:type="string">Team3Vendor_GiftwrapSlider/checkout/cart/totals/giftwrap</item>
+    <!--  Show custom giftwrap price on order summary-->
+                                                                    <!-- <item name="title" xsi:type="string" translate="true">Giftwrap</item> -->
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                    <item name="cart_items" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="details" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="subtotal" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Tax/js/view/checkout/summary/item/details/subtotal</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+    <!--  End-->
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+
+            </referenceBlock>
+            <!-- <block class="Magento\Framework\View\Element\Template" name="gift.messages.data" template="Vendor_CheckoutDemo::gift_options.phtml"/> -->
+        <!-- </referenceBlock> -->
+        <!-- <referenceContainer name="content">
+            <block class="Magento\GiftMessage\Block\Cart\GiftOptions" name="checkout.cart.order.actions.gift_options" template="cart/gift_options.phtml" cacheable="false"/>
+        </referenceContainer> -->
+    </body>
+</page>

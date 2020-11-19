@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Team2FeaturedCategory_FeaturedCategory::css/tuan.css"/>
+    </head>
+    <body>
+        <referenceContainer name="featuredcategory">
+            <block class="Team2FeaturedCategory\FeaturedCategory\Block\Widget\FeaturedCategory" name="custom-content" template="Team2FeaturedCategory_FeaturedCategory::widget/FeaturedCategory.phtml" />
+        </referenceContainer>
+    </body>
+</page>

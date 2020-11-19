@@ -1,0 +1,23 @@
+.giftwrapImage {
+	width: 100% !important;
+	/*height: 135px;*/
+}
+
+.giftwrapTitle {
+	font-weight: bold;
+    margin: 5px 5px;
+}
+
+.giftwrapPrice {
+	margin: 5px 5px;
+}
+
+.giftwrap-slider-item {
+	padding: 7px;
+	cursor: pointer;
+}
+
+.giftwrap-slider-item.active {
+	border: 2px solid #C59B9C;
+    border-radius: 7px;
+}

@@ -1,0 +1,9 @@
+<!-- ko if: isDisplayedDiscountTotal() -->
+<tr class="totals discount excl">
+    <th class="mark" colspan="1" scope="row" data-bind="text: title"></th>
+    <h1>reward point</h1>
+    <td class="amount">
+        <span class="price" data-bind="text: getDiscountTotal()"></span>
+    </td>
+</tr>
+<!-- /ko -->

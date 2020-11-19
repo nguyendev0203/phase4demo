@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Team2DetailPage\CustomImageBlock\Block\Widget\CustomImageBlock" id="team2detailpage_customimageblock_customimageblock" >
+        <label> Custom Image Block</label>
+        <description>Custom Image Block detail page </description>
+
+        <parameters>
+            <parameter name="htmlImageBlockTitle" sort_order="10" visible="true" xsi:type="text">
+                <label>Title of image</label>
+            </parameter>
+             <parameter name="htmlImageBlockText" sort_order="10" visible="true" xsi:type="text">
+                <label>Text of image</label>
+            </parameter>
+            <parameter name="htmlImageBlockLink" sort_order="10" visible="true" xsi:type="text">
+                <label>Link of image</label>
+            </parameter>
+           
+             <parameter name="insert_a_meaningfull_name" xsi:type="block" required="true" visible="true" sort_order="10">
+                <label translate="true">Insert an image here</label>
+            
+                <block class="Team2DetailPage\CustomImageBlock\Block\Widget\CustomImageBlock">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+       
+    </widget>
+</widgets>

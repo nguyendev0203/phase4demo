@@ -1,0 +1,143 @@
+/* Slider */
+.catalog-product-view .slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.catalog-product-view .slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.catalog-product-view .slick-list:focus
+{
+    outline: none;
+}
+.catalog-product-view .slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.catalog-product-view .slick-slider .slick-track,
+.catalog-product-view .slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.catalog-product-view .slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.catalog-product-view .slick-track:before,
+.catalog-product-view .slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.catalog-product-view .slick-track:after
+{
+    clear: both;
+}
+.catalog-product-view .slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.catalog-product-view .slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.catalog-product-view .slick-slide img
+{
+    display: block;
+}
+.catalog-product-view .slick-slide.slick-loading img
+{
+    display: none;
+}
+.catalog-product-view .slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.catalog-product-view .slick-initialized .slick-slide
+{
+    display: block;
+}
+.catalog-product-view.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.catalog-product-view .slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.catalog-product-view .slick-arrow.slick-hidden {
+    display: none;
+}
+.catalog-product-view .slick-prev, .catalog-product-view .slick-next{
+    color: black;
+    font-size: 15px;
+}
+.catalog-product-view .slick-disabled {
+    opacity: 0.2;
+}
+
+.prev-btn .slick-arrow {
+
+}
+.products-related .slide-nav .prev-btn .slick-arrow .fa-chevron-left {
+    font-size: 16px;
+}
+.products-related .slide-nav .next-btn .slick-arrow .fa-chevron-right {
+    font-size: 16px;
+}
+
+#related .product-image-container {
+    width: 25px;
+}
+.next-btn:hover {
+    cursor: pointer;
+}

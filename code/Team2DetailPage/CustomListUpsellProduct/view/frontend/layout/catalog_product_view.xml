@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.options.wrapper">
+            <block class="Team2DetailPage\CustomListUpsellProduct\Block\CustomListUpsellProduct" name="team2detailpage.upsell" template="Magento_Catalog::product/list/items.phtml" after="-">
+                <arguments>
+                    <argument name="type" xsi:type="string">upsell</argument>
+                </arguments>
+                <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="crosssell.product.addto" as="addto">
+                    <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                           name="crosssell.product.addto.compare" as="compare"
+                           template="Magento_Catalog::product/list/addto/compare.phtml"/>
+                </block>
+            </block>
+        </referenceBlock>
+        <move element="team2detailpage.upsell" destination="content" after="product.info.media"/>   
+    </body>
+</page>

@@ -1,0 +1,5 @@
+<?php if ($_descriptionBottom = $block->getCurrentCategory()->getDescriptionBottom()): ?>
+    <div class="category-description-bottom">
+        <?= /* @escapeNotVerified */ $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_descriptionBottom, 'description_bottom') ?>
+    </div>
+<?php endif; ?>

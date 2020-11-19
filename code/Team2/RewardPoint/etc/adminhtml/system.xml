@@ -1,0 +1,42 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="rwpoint" translate="label" class="a-custom-css-class-to-style-this-tab" sortOrder="10">
+            <label>Reward Point</label>
+        </tab>
+
+        <section id="rwpoint_section" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">
+            <class>rwpoint-separator</class>
+            <label>Reward Point</label>
+            <tab>rwpoint</tab>
+            <resource>Team2_RewardPoint::news_config</resource>
+
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" type="select">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="point_earn_calc" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Points Earning and Spending Calculation</label>
+                <field id="point_spendr" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" type="text">
+                    <label>Points Spending Rate</label>
+                </field>
+                <field id="point_earnr" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" type="text">
+                    <label>Points Earning Rate</label>
+                </field>
+            </group>
+
+            <group id="order_limit" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Order Limitations</label>
+                <field id="min_point" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" type="text">
+                    <label>Minimum Points Requirement</label>
+                </field>
+                <field id="redem_order" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" type="text">
+                    <label>Redemption Limit per Order</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

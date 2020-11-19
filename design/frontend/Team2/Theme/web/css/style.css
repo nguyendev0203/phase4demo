@@ -1,0 +1,360 @@
+@font-face {
+    font-family: "icomoon";
+    src: url("../fonts/icomoon.eot");
+    src: url("../fonts/icomoon.eot") format("embedded-opentype"),
+        url("../fonts/icomoon.ttf") format("truetype"),
+        url("../fonts/icomoon.woff") format("woff"),
+        url("../fonts/icomoon.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* / use !important to prevent issues with browser extensions that change fonts / */
+    font-family: "icomoon" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-shopping-bag:before {
+    content: "\e906";
+}
+.icon-user:before {
+    content: "\e908";
+}
+.icon-facebook:before {
+    content: "\e900";
+}
+.icon-heart:before {
+    content: "\e901";
+}
+.icon-instagram:before {
+    content: "\e902";
+}
+.icon-linkedin-logo:before {
+    content: "\e903";
+}
+.icon-loupe:before {
+    content: "\e904";
+}
+.icon-menu:before {
+    content: "\e905";
+}
+.icon-twitter:before {
+    content: "\e907";
+}
+
+/* Icon moon DUCANh */
+.service-widget {
+    flex-direction: row;
+    justify-content: left;
+}
+
+.service-widget {
+    flex-direction: column;
+}
+.service-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.container {
+    width: 80.5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+.service-widget .service-content {
+    text-align: left;
+}
+
+
+
+section {
+    display: block;
+}
+.row-sm {
+    display: flex;
+    justify-content: space-between;
+}
+.service-widget .service-title {
+    font: 700 1.4rem/1 "Poppins", "Open Sans", sans-serif;
+    color: #222529;
+    text-transform: uppercase;
+}
+.service-widget p {
+    font: 300 1.3rem "Open Sans", sans-serif;
+    line-height: 22px;
+    color: #777;
+    letter-spacing: 0.01em;
+    margin-bottom: 0;
+}
+.service-widget {
+    display: flex;
+    flex-direction: row;
+}
+i {
+    font-size: 35px;
+}
+
+.service-widget .service-icon {
+    margin-right: 0;
+}
+.service-widget .service-icon {
+    font-size: 4rem;
+    color: #222529;
+    margin-right: 0.8rem;
+}
+
+
+.copyright {
+    background-color: white;
+    text-align: left;
+}
+
+.service-widget .service-title {
+    font: 700 1.3rem/1 "Poppins", "Open Sans", sans-serif;
+    color: #222529;
+    text-transform: uppercase;
+}
+
+
+.service-widget p {
+    font: 300 1.2rem "Open Sans", sans-serif;
+    line-height: 22px;
+    color: #777;
+    letter-spacing: 0.01em;
+    margin-bottom: 0;
+}
+
+.service-widget i {
+    margin-right: 1rem;
+    font-size: 30px;
+}
+
+
+.service-widget .service-icon {
+    font-size: 4rem;
+    color: #222529;
+    width: 50px;
+    height: 45px;
+    padding-right: 0.5rem;
+}
+@media (max-width: 991px) {
+    .service-widget {
+        justify-content: left;
+    }
+    .service-widget .service-icon {
+        width: 50px;
+    }
+}
+@media (max-width: 575px) {
+    .service-widget .service-icon {
+        width: 4.5rem;
+    }
+    .service-widget {
+        margin-bottom: 0rem;
+    }
+}
+@media (max-width: 1024px) { 
+    .service-widget .service-icon {
+        width: 50px;
+    }     
+}
+
+/*vendor-list*/
+
+.slick-slide .imagevendor {
+    max-height: 60px;
+}
+
+.customer-logos {
+    background: #222529;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+    height: 145px;
+    display: flex;
+    align-items: center;
+}
+
+
+#vendor-logo .slick-list .slick-track .slick-slide div .slide{
+    justify-content: center;
+    display: flex !important;
+}
+.slick-slide {
+    margin: 0 20px;
+}
+.slick-slide .imagevendor{
+    width: auto;
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.slick-track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    /* min-height: 1px; */
+}
+.slick-slide img {
+    display: block;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+/*search*/
+#myDropdown {
+    right: 13.2%;
+}
+@media only screen and (max-width: 1024px) {
+    #myDropdown {
+        right: 2%;
+    }
+}
+@media only screen and (max-width: 834px) {
+    #myDropdown {
+        right: 2%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #myDropdown {
+        right: 2%;
+    }
+    #toggle-id-check li{
+        font-size: 1.5rem;
+    }
+    
+}
+@media only screen and (max-width: 540px) {
+    #myDropdown {
+        right: 24%;
+        z-index: 2;
+    }
+    #search {
+        bottom: 0;
+        width: auto !important;
+    }
+    .block-search input {
+        font-size: 16px;
+        left: -300%;
+        margin: 15px 0;
+        position: absolute !important;
+    }
+    .block-search .label:before {
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 35px;
+        line-height: 33px;
+        color: #8f8f8f;
+        content: "\e615";
+        font-family: "icons-blank-theme";
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+        opacity: 0 !important;
+    }
+    .block-search .control {
+        border-top: none !important;
+        clear: both;
+        margin: 0 -15px -1px;
+        padding: 0 15px;
+    }
+}
+
+/* .old-price,
+.price-label,
+.reviews-actions {
+    display: none !important;
+} */
+
+.price-label,
+.reviews-actions {
+    display: none !important;}
+
+
+/*home text*/
+#toggle-id-check li
+{
+    color: #222529;
+    font: 700 13px "Poppins","Open Sans",sans-serif;
+    transition: none;
+    text-transform: uppercase;
+}
+/* hung fix */
+.cms-home .service-title {
+    margin: 0;
+}
+.cms-home .mb-0 .row-sm .col-md-6 {
+    justify-content: space-around;
+}
+@media only screen and (max-width: 540px) {
+    .cms-home .mb-0 .row-sm .col-md-6 {
+        justify-content: left;
+    }
+}
+/*menu */
+.navigation .ui-menu 
+{
+      padding: 0 !important;
+}
+.navigation .level-top 
+{
+      padding-left: 0 !important;
+}
+@media only screen and (max-width: 540px) {
+    .cms-home .columns .column.main {
+        padding: 0;
+    }
+    .cms-home .banner-footer-container {
+        display: none;
+    }
+}
+
+
+/*breadcrumbs*/
+.breadcrumbs {
+    padding-left: 0 !important;
+}
+@media only screen and (max-width: 768px) {
+    .product-title {
+        font-size: 1.2rem;
+    }
+    .rating-summary .rating-result:before {
+        font-size: 2rem;
+    }
+    .product-widget .product-details {
+        max-width: calc(100% - 65px);
+    }
+}

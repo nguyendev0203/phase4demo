@@ -1,0 +1,16 @@
+<?php
+// use Magento\Framework\View\Element\Template;
+// /** @var Template $block */
+// $this->cc()
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+if($customerSession->isLoggedIn()) {
+    ?>
+    <div class="reward-message">
+    You can earn <span class="message-reward-point"><?php echo $block->getRewardpoint();?> Reward Points</span> for completing your purchase
+    </div>
+    <div>
+        <input type="hidden" id="rwpoint" value="<?php echo $block->getRewardpoint()?>">
+    </div>
+<?php }
+?>

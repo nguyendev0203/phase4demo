@@ -1,0 +1,59 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" />
+<style type="text/css">
+    #scroll-top {
+        background: #43494e;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+        cursor: pointer;
+        height: 30px;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        text-transform: uppercase;
+        width: 40px;
+        height: 40px;
+        z-index: 9999;
+        display: flex;
+        text-decoration: none;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        right: 15px;
+        padding: 11px 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    #scroll-top .fas {
+        width: 10px;
+        height: 10px;
+        font-size: 14px;
+    }
+    i.fas.fa-angle-up {
+     display: contents;
+    }
+</style>
+
+<a rel="nofollow" onclick="javascript:void(0);" id="scroll-top"><i class="fas fa-angle-up"></i></a>
+
+<script type="text/javascript">
+    require(['jquery', 'domReady!'], function($) {
+        var $bt = $('#scroll-top');
+
+        function ManageGoToTop() {
+            if ($(this).scrollTop() > 300) {
+                $bt.fadeIn();
+            } else {
+                $bt.fadeOut();
+            }
+        }
+        ManageGoToTop();
+        $(window).scroll(ManageGoToTop);
+        $bt.on('click touch', function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        })
+    });
+</script>

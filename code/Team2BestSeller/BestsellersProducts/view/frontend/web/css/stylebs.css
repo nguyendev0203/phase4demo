@@ -1,0 +1,66 @@
+.tuan-best-seller > .product-item-details{
+    position: relative;
+}
+.tuan-best-seller > .product-item-details > .product-item-actions > .actions-secondary{
+    position: absolute;
+    top: -10%;
+    right: -5%;
+}
+.tuan-best-seller > .product-item-details > .product-reviews-summary.short{
+    margin: 0;
+}
+.tuan-best-seller > .product-item-details > .product-reviews-summary.short > .reviews-actions{
+    display: none;
+}
+.tuan-best-seller > .product-item-details > .product-item-actions{
+    margin: 0;
+}
+.tuan-best-seller > .product-item-details > .price-box.price-final_price{
+    margin: 0;
+}
+.best-seller-browseall{
+    
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border: 2px solid #f2eeed;
+    padding: 2rem 2rem;
+    letter-spacing: 1.15px;
+
+}
+.text-browse {
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+}
+.text-browse:hover {
+
+    text-decoration: none;
+}
+.best-seller-browseall .fas-img-left-1{
+    margin-left: 10px;
+    color:black;
+}
+.browse-all-row .best-seller-browseall{
+    text-decoration: none;
+}
+
+
+/* best seller css left*/
+.tuan-bs {
+    text-align: left !important;
+}
+.star-bestseller .product-reviews-summary .short {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.abc .rating-summary {
+    text-align: left; 
+}
+.price-bestseller .price-box{
+    text-align: left;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}

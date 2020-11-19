@@ -1,0 +1,62 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+<css src="css/style.css"/>
+<css src="https://use.fontawesome.com/releases/v5.7.0/css/all.css" src_type="url"/>
+<css src="css/local.css"/>
+</head>
+<body>
+<referenceBlock name="advanced-search-link" remove="true"/>
+<!--  <referenceBlock name="header.panel" remove="true"/>  -->
+<!--  <referenceBlock name="register-link" remove="true" />  -->
+<!--  <referenceBlock name="authorization-link" remove="true" />  -->
+<!--  <referenceBlock name="navigation.sections" remove="true"/>  -->
+<referenceContainer name="top.container" remove="true"/>
+<referenceBlock name="top.search" remove="true"/>
+<referenceContainer name="header.container" htmlClass="page-main-header">
+<container name="header-container-header" htmlTag="div" htmlClass="header-main-header container">
+<container name="main-top-header" label="Main Top Header" htmlTag="div" htmlClass="top-main-header row">
+<container name="main-left-header" label="Main Left Header" htmlTag="div" htmlClass="left-header-container col-md-5 col-sm-6"/>
+<!--  <container name="main-center-header" label="Main Center Header" htmlTag="div" htmlClass="center-header-container col-md-2 col-sm-2 col-2" />  -->
+<container name="main-right-header" label="Main Right Header" htmlTag="div" htmlClass="right-header-container col-md-5 col-sm-4 col-10"/>
+</container>
+<container name="main-bottom-header" label="Main Bottom Header" htmlTag="div" htmlClass="bottom-header-container"/>
+</container>
+</referenceContainer>
+<move element="navigation.sections" destination="main-left-header"/>
+<!--  <move element="logo" destination="main-center-header" />  -->
+<move element="header-wrapper" destination="main-top-header" after="main-left-header"/>
+<referenceContainer name="header-wrapper" htmlClass="header content col-md-2 col-sm-2 col-2"> </referenceContainer>
+<move element="minicart" destination="main-right-header" after="-"/>
+<!--  <referenceContainer name="main-left-header">
+            <block class="Magento\Framework\View\Element\Template" name="header.left" after="-" template="Magento_Theme::left-menu.phtml"/>
+        </referenceContainer>  -->
+<referenceContainer name="main-right-header">
+<block class="Magento\Framework\View\Element\Template" name="header.right" after="header.center" template="Magento_Theme::right-menu.phtml"/>
+</referenceContainer>
+<!--  <referenceBlock name="breadcrumbs" remove="true" />  -->
+<!--  <referenceBlock name="breadcrumbs" template="Magento_Theme::html/breadcrumbs.phtml" />
+        <block class="Magento\Catalog\Block\Breadcrumbs" />  -->
+<!--  Footer  -->
+<referenceBlock name="form.subscribe" remove="true"/>
+<referenceBlock name="report.bugs" remove="true"/>
+<referenceBlock name="footer_links" remove="true"/>
+<referenceContainer name="footer-container" htmlClass="page-main-footer">
+<container name="slider-banner" label="Slider Banner" htmlTag="div" htmlClass="banner-footer-container"/>
+<container name="bottom-container-footer" htmlTag="div" htmlClass="bottom-container-footer container">
+<container name="bottom-row-footer" htmlTag="div" htmlClass="bottom-row-footer row">
+<container name="main-left-footer" label="Main Left Footer" htmlTag="div" htmlClass="left-footer-container col-md-2"/>
+<container name="main-center-footer" label="Main Center Footer" htmlTag="div" htmlClass="center-footer-container col-md-4"/>
+<container name="main-right-footer" label="Main Right Footer" htmlTag="div" htmlClass="right-footer-container col-md-6"/>
+</container>
+<container name="main-bottom-footer" label="Main Bottom Footer" htmlTag="div" htmlClass="bottom-footer-container">
+<container name="copyright-position" label="Copyright" htmlTag="div" htmlClass="footer-bottom-cpr"/>
+<container name="payment-method" label="Footer Payment Method" htmlTag="div" htmlClass="footer-bottom-pmt"/>
+</container>
+</container>
+</referenceContainer>
+<referenceContainer name="before.body.end">
+<block name="magefan.go.to.top" template="Magento_Theme::gototop.phtml"/>
+</referenceContainer>
+<move element="copyright" destination="copyright-position"/>
+</body>
+</page>

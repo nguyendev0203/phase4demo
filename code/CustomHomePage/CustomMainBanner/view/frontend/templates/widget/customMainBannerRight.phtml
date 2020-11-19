@@ -1,0 +1,38 @@
+<?php if ($block->getData('main_banner_right_1_image')) : ?>
+<div class="col-md-7 main-banner-right-block">
+    <div class="row" style="margin-left: 0;">
+        <div id="owl-carousel-mainbanner" class="owl-carousel owl-theme">
+            <div class="item active relative"><img class="main-banner-right-slider" src="<?php echo $block->getData("main_banner_right_1_image") ?>">
+                <div class="banner-content content-left absolute">
+                    <h1><strong><?php echo $block->getData("main_banner_right_1_title") ?><br></strong><span class="text-banner-right-image-subtitle"><?php echo $block->getData("main_banner_right_1_content") ?></span></h1>
+                    <div class="banner-info skew-box"><a class="btnCoupon skew-box" href="<?php echo $block->getData("main_banner_right_1_coupon_link") ?>"><?php echo $block->getData("main_banner_right_1_coupon") ?></a>
+                        <h3 class="sale-off skew-box"><span class="price-off-slider">$<?php echo $block->getData("main_banner_right_1_price") ?></span> <strong>OFF</strong></h3>
+                    </div>
+                    <p class="text-noti"><?php echo $block->getData("main_banner_right_1_promo") ?></p>
+                    <a class="btnShopnow" href="<?php echo $block->getData("main_banner_right_1_button_link") ?>"><?php echo $block->getData("main_banner_right_1_button") ?><i class="fas fa-long-arrow-alt-right fas-img-right"  style="padding-left:inherit;"></i> </a>
+                </div>
+            </div>
+            <div class="item active relative"><img class="main-banner-right-slider" src="<?php echo $block->getData("main_banner_right_2_image") ?>">
+                <div class="banner-content content-left absolute">
+                    <h1><strong><?php echo $block->getData("main_banner_right_2_title") ?><br></strong><span class="text-banner-right-image-subtitle"><?php echo $block->getData("main_banner_right_2_content") ?></span></h1>
+                    <div class="banner-info skew-box"><a class="btnCoupon skew-box" href="<?php echo $block->getData("main_banner_right_2_coupon_link") ?>"><?php echo $block->getData("main_banner_right_2_coupon") ?></a>
+                        <h3 class="sale-off skew-box"><span class="price-off-slider">$<?php echo $block->getData("main_banner_right_2_price") ?></span> <strong>OFF</strong></h3>               
+                    </div>
+                    <p class="text-noti"><?php echo $block->getData("main_banner_right_2_promo") ?></p>
+                        <a class="btnShopnow" href="<?php echo $block->getData("main_banner_right_2_button_link") ?>"><?php echo $block->getData("main_banner_right_2_button") ?> <i class="fas fa-long-arrow-alt-right fas-img-right" style="padding-left:inherit;"></i> </a>
+                </div>
+            </div>
+            <div class="item active relative"><img class="main-banner-right-slider" src="<?php echo $block->getData("main_banner_right_3_image") ?>">
+                <div class="banner-content content-left absolute">
+                    <h1><strong><?php echo $block->getData("main_banner_right_3_title") ?><br></strong><span class="text-banner-right-image-subtitle"><?php echo $block->getData("main_banner_right_3_content") ?></span></h1>
+                    <div class="banner-info skew-box"><a class="btnCoupon skew-box" href="<?php echo $block->getData("main_banner_right_3_coupon_link") ?>"><?php echo $block->getData("main_banner_right_3_coupon") ?></a>
+                        <h3 class="sale-off skew-box"><span class="price-off-slider">$<?php echo $block->getData("main_banner_right_3_price")?></span> <strong>OFF</strong></h3>
+                    </div>
+                    <p class="text-noti"><?php echo $block->getData("main_banner_right_3_promo") ?></p>
+                        <a class="btnShopnow" href="<?php echo $block->getData("main_banner_right_3_button_link") ?>"><?php echo $block->getData("main_banner_right_3_button") ?><i class="fas fa-long-arrow-alt-right fas-img-right"  style="padding-left:inherit;"></i> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

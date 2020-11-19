@@ -1,0 +1,207 @@
+/* Div cha */
+/* #tuan {
+    margin-left: -1rem;
+} */
+
+/* Title list */
+#tuan .title-bottom { 
+    padding-bottom: 1rem;
+    border-bottom: 0.2px solid #dfdfdf;
+}
+#tuan .title-bottom .widget-title{
+    /* font-weight: 700;
+    border-bottom: 1px solid #e8e0d9;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+    padding-top: 2rem; */
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+    text-decoration: none;
+    font: 600 1.2rem/1.1 "Poppins","Open Sans",sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all .2s ease-out;
+    
+}
+
+.product-intro {
+    padding-bottom: 1.6rem;
+}
+.sidebar-product .product-widget {
+    margin-bottom: 2rem;
+}
+.product-widget {
+    display: flex;
+}
+.product-default {
+    color: #777;
+    padding: 1.2rem 0 0 0;
+}
+.sidebar-product .product-widget figure {
+    max-width: 64px;
+    margin-right: 2rem;
+}
+.product-default figure {
+    display: flex;
+    justify-content: center;
+}
+.product-widget figure {
+    margin-bottom: 0;
+    align-items: center;
+}
+.left-details .product-details {
+    align-items: flex-start;
+}
+.product-default .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-default a {
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease-out;
+    text-decoration: none;
+}
+.product-widget .product-details {
+    max-width: calc(100% - 50px);
+}
+
+.sidebar-product .product-widget .product-title {
+    font-family: "Poppins", "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.product-default .product-title {
+    font: 600 1.18rem "Poppins", "Open Sans", sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ratings-container {
+    line-height: 1;
+    margin: 0 0 10px 1px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.ratings-container .product-ratings {
+    height: 13px;
+}
+.ratings-container .product-ratings,
+.ratings-container .ratings {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    font-family: "porto";
+}
+.product-widget .ratings-container .ratings {
+    font-size: 1.2rem;
+}
+.product-widget .price-box {
+    margin-bottom: 0;
+}
+.sidebar-product .product-widget .product-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.product-price {
+    color: #465157;
+    font: 500 1.6rem/0.8 "Poppins", "Open Sans", sans-serif;
+}
+
+.rating-summary .rating-result:before {
+    color: #c7c7c7;
+    /*font-size: 2.2rem;*/
+}
+.product-reviews-summary {
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.reviews-actions {
+    display: none;
+}
+.product-reviews-summary .reviews-actions {
+    line-height: 0px;
+}
+.ratings .product-reviews-summary {
+    margin: 0;
+}
+.ratings .product-reviews-summary .reviews-actions {
+    display: none;
+}
+/* label discount */
+.image-product-tuan {
+    position: relative;
+}
+.image-product-tuan .discount_percent1 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #eb6f79;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 2px 5px;
+}
+/* Start */
+#tuan .product-default .product-details .ratings-container .product-ratings .ratings .product-reviews-summary .rating-summary{
+    left: -1px;
+}
+/* Price */
+#tuan .product-widget .price-box .price-box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#tuan
+    .price-box
+    .product-price
+    .price-final_price
+    .special-price
+    .price-final_price
+    .price-wrapper
+    .price {
+    margin-left: 0rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-left: 2px;
+}
+#tuan
+    .price-box
+    .product-price
+    .price-final_price
+    .old-price
+    .price-final_price
+    .price-wrapper
+    .price {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #c3c5c9;
+}
+#tuan
+    .price-box
+    .product-price
+    .price-final_price
+    .price-final_price
+    .price-wrapper
+    .price {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+    .catalog-product-view #tuan {
+        display: none;
+    }
+}

@@ -1,0 +1,20 @@
+<?php
+$myBlock = \Magento\Framework\App\ObjectManager::getInstance()->get('Mageplaza\HelloWorld\Block\HelloWorld');
+ 
+$currentProduct = $myBlock->getCurrentProduct();
+ 
+if ($currentProduct = $myBlock->getCurrentProduct()) {
+    $relatedProducts = $currentProduct->getRelatedProducts();
+    
+    if (!empty($relatedProducts)) {
+        echo 'Related Products <br />';    
+        foreach ($relatedProducts as $relatedProduct) {
+            echo $relatedProduct->getSku() . '<br />';  
+            echo $relatedProduct->getName(); //get name
+            echo $relatedProduct->getPrice(); //get price
+            echo $relatedProduct->getData(); //Show all attributes      
+        }
+    }    
+   
+}
+

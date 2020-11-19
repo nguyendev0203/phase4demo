@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <type name="Magento\Cms\Model\Wysiwyg\Config">
+      <plugin name="add_wysiwyg_data" type="Team2DetailPage\CustomImageBlock\Plugin\WysiwygConfig" sortOrder="30" />
+  </type>
+  <type name="Magento\Widget\Model\Widget">
+      <plugin name="test1" type="Team2DetailPage\CustomImageBlock\Model\Widget" sortOrder="1" disabled="false"/>
+  </type>
+</config>

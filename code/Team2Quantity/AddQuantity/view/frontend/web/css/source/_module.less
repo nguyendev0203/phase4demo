@@ -1,0 +1,91 @@
+.box-tocart {
+    .fieldset {
+      .field.qty {
+          padding-top: 25px;
+          div.control {
+              position: relative;
+              width: 92px !important;
+              .minus,
+              .plus {
+                  &:hover {
+                      button {
+                          background: #dfdfdf;
+                          color: #252531;
+                      }
+                  }
+                  button {
+                      position: absolute;
+                      top: 0px;
+                      border-radius: 0;
+                      border: 1px solid #dfdfdf;
+                      background: #fff;
+                      height: 52px;
+                      line-height: 52px;
+                      padding: 0px;
+                      width: 28px;
+                      text-align: center;
+                      cursor: pointer;
+                      box-shadow: none;
+                  }
+              }
+              .minus {
+                  button {
+                      left: 0px;
+                      border-radius: 0;                  }
+              }
+              .plus {
+                  button {
+                      right: 0px;
+                      border-radius: 0;
+                  }
+              }
+              .input-text.qty {
+                  border-radius: 0px !important;
+                  height: 20px !important;
+                  height: 52px !important;
+                  width: 40px !important;
+                  text-align: center !important;
+                  margin-left: 26px !important;
+                  display: inline-block !important;
+                  z-index: 5 !important;
+                  padding: 0px 3px !important;
+                  border: 1px solid #dfdfdf !important;
+              }
+          }
+      }
+      #product-addtocart-button{
+        background-color: #606da6;
+        text-transform: uppercase;
+        font-weight: 400;
+        border-radius: 0;
+      }
+      #product-addtocart-button::before{
+        content: "\e906";
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+      }
+      .details-qty.qty {
+          .item-qty.cart-item-qty {
+              margin-right: 0px;
+          }
+          .decreasing-qty {
+              vertical-align: top;
+              margin-right: -5px;
+              padding: 7px 10px;
+              box-shadow: none;
+          }
+          .increasing-qty {
+              vertical-align: top;
+              margin-left: -5px;
+              padding: 7px 8px;
+              box-shadow: none;
+          }
+      }
+    }
+}

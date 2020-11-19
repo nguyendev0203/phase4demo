@@ -1,0 +1,223 @@
+<?php
+$maxCategory = (int)$block->escapeHtml($block->getData('numberCategory'));
+$numberProductDisplay = $block->escapeHtml($block->getData('numberProduct'));
+$width = (int)$block->escapeHtml($block->getData('widthImage'));
+$height = (int)$block->escapeHtml($block->getData('heightImage'));
+?>
+<hr class="luat-hr">
+<div class="product data items Feature-phu-product"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 0, "disabledState": "disabled"}}'>
+    <div class="section-feature-product">
+        <?php if ($block->getTitle()): ?>
+            <div class="block-title">
+                <h2 class="text-feature-product"><strong ><?= $block->escapeHtml(__($block->getTitle())) ?></strong></h2>
+            </div>
+        <?php endif ?>
+        <div class="tabs-content list-category">
+            <?php
+            // get list of all the categories
+            $flash = 1;
+
+            $categories = $block->getCategoryCollection()->getItems();
+            foreach ($categories as $key => $value) {
+
+                // echo $key.": ".$value->getName();
+                if($flash > $maxCategory){
+                    break;
+                }
+                $flash++;
+                ?>
+                <div class="item title" data-role="collapsible">
+                    <a class="switch-feature-product" data-toggle="trigger" href="#tab-<?php echo strtolower($value->getName()) ?>"><?php echo $value->getName(); ?></a>
+                </div>
+                <?php
+            }
+
+            ?>
+        </div>
+    </div>
+<?php
+/** \Phu\Widget\Block\Widget\Test $block */
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
+
+$review =  $this->getLayout()->createBlock('Magento\Catalog\Block\Product\AbstractProduct');
+
+
+//defineFeaturehtml
+$type = 'widget-product-grid';
+
+$mode = 'grid';
+
+$image = 'new_products_content_widget_grid';
+
+$showWishlist = false;
+$showCompare = false;
+$showCart = true;
+$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+$description = false;
+//endFeature
+$index = 1;
+
+foreach($categories as $category)
+{
+
+
+    if($category->getIsActive()==1)
+    {
+
+        if ($category->getId()==9) {
+           $items = $block->getProductNewArrival();
+        }
+        else{
+            $items = $block->getProductCollectionByCategories($category->getId());
+        }
+        if($index > $maxCategory){
+            break;
+        }
+        $index++;
+        ?>
+        <div id="tab-<?php echo strtolower($category->getName()); ?>" class="item content" data-role="content">
+        <!-- Content Featured Product -->
+        <div class="block widget block-products-list <?= $mode ?>">
+
+        <div class="block-content">
+            <?= '<!-- ' . $image . '-->' ?>
+            <div class="products-<?= $mode ?> <?= $mode ?>">
+                <ol class="product-items <?= $type ?>">
+                    <?php $iterator = 1; ?>
+                    <?php foreach ($items as $_item): ?>
+                        <?= ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
+                        <div class="product-item-info">
+                            <?php
+                                $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+                                $addToCartUrl =  $listBlock->getAddToCartUrl($_item);
+                                $image_url = $imageHelper->init($_item, 'product_thumbnail_image')->setImageFile($_item->getFile())->resize($width,$height)->getUrl();
+                            ?>
+                            
+                            <a href="<?=$_item->getProductUrl()?>" class="product-item-photo">
+                                <img src="<?= $image_url ?>">
+                            </a>
+
+                            <?php $finalPrice=$_item->getFinalPrice();
+                            $price=$_item->getPrice();
+                            if ($finalPrice<$price) { ?>
+                                <span class="discount_percent">
+                                    <?php
+                                    $saving=round(($finalPrice/$price)*100)-100;
+                                    echo $saving . "%"; ?>
+                                </span>
+                            <?php } ?>
+                            <div class="product-item-details">
+                                <strong class="product-item-name">
+                                    <a title="<?= $block->escapeHtml($_item->getName()) ?>"
+                                     href="<?=$_item->getProductUrl()?>"
+                                     class="product-item-link">
+                                     <?= $block->escapeHtml($_item->getName()) ?>
+                                 </a>
+                             </strong>
+
+                            <div class="star-bestseller">
+                                <?php if ($templateType): ?>
+                                    <?php echo $review->getReviewsSummaryHtml($_item, $templateType, false);?>
+
+                                <?php endif; ?>
+                            </div>
+                            <?php if ((int)$_item->getReviewsCount()==0) : ?>
+
+                            <div class="rating-summary" id="rating-summary-none">
+                                <div class="rating-result" title="0%">
+                                    <span style="width: 0%;"><span>0%</span></span>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php
+                        if($price<=$finalPrice)
+                        {                                          
+                                echo $block->getProductPrice($_item)  ;
+                        }
+                        else
+                        {
+                            ?>
+                            <div class="discount-price-product">
+                                <span class="normal-price-product"><?php echo "$".number_format($price, 2, '.', '')." "; ?></span>
+
+                                <span class="special-price-product"><?php echo "$".number_format($finalPrice, 2, '.', '') ?></span>
+                            </div>
+                            <?php
+                        }
+
+                        ?>
+
+                        <?php if ($showWishlist || $showCompare || $showCart): ?>
+                            <div class="product-item-actions">
+                                <?php if ($showCart): ?>
+                                    <div class="actions-primary">
+                                        <?php if ($_item->isSaleable()): ?>
+                                            <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
+                                            <button class="action tocart primary" data-mage-init='{"redirectUrl":{"url":"<?= $block->escapeUrl($addToCartUrl) ?>"}}' type="button" title="<?= $block->escapeHtml(__('Add to Cart')) ?>">
+                                                <i class="icon-shopping-bag"></i>
+                                                <span class="span-add-to-cart"><?= $block->escapeHtml(__('ADD TO CART')) ?></span>
+                                            </button>
+                                            <?php else: ?>
+                                                <?php
+                                                $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
+                                                $postData = $postDataHelper->getPostData($addToCartUrl, ['product' => $_item->getEntityId()])
+                                                ?>
+                                                <button class="action tocart primary" data-post='<?= $postData ?>' type="button" title="<?= $block->escapeHtml(__('Add to Cart')) ?>">
+                                                   <i class="icon-shopping-bag"></i>
+                                                    <span class="span-add-to-cart"><?= $block->escapeHtml(__('ADD TO CART')) ?></span>
+                                               </button>
+                                           <?php endif; ?>
+                                           <?php else: ?>
+                                            <?php if ($_item->getIsSalable()): ?>
+                                                <div class="stock available"><span><?= $block->escapeHtml(__('In stock')) ?></span></div>
+                                                <?php else: ?>
+                                                    <div class="stock unavailable"><span><?= $block->escapeHtml(__('Out of stock')) ?></span></div>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if ($showWishlist || $showCompare): ?>
+                                        <div class="actions-secondary" data-role="add-to-links">
+                                            <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>
+                                            <a href="#"
+                                            data-post='<?= $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $block->escapeHtml(__('Add to Wish List')) ?>">
+                                            <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if ($block->getAddToCompareUrl() && $showCompare): ?>
+                                        <?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');?>
+                                        <a href="#" class="action tocompare" data-post='<?= $compareHelper->getPostDataParams($_item) ?>' title="<?= $block->escapeHtml(__('Add to Compare')) ?>">
+                                            <span><?= $block->escapeHtml(__('Add to Compare')) ?></span>
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?= ($iterator == count($items)+1) ? '</li>' : '' ?>
+        <?php endforeach ?>
+    </ol>
+</div>
+</div>
+</div>
+
+        <!-- end content-->
+        </div>
+
+    <?php
+
+
+
+    }
+}
+
+
+?>
+
+</div>
+

@@ -1,0 +1,33 @@
+<!-- 
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+<move element="page.main.title" destination="product.info.main" before="-"/>
+<move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+<move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+<move element="product.info.overview" destination="product.info.main" after="product.info.review"/>
+<!--  <move element="product.info.social" destination="product.info.form.content"/>  -->
+<!--  <move element="product.info.addto" destination="product.info.addtocart.additional" />  -->
+<!--  <move element="product.info.addto" destination="product.info.options.wrapper.bottom" after="product.info.addtocart">  -->
+<move element="view.addto.wishlist" destination="product.info.options.wrapper.bottom" after="product.info.addtocart"/>
+<referenceContainer name="product.info.main">
+<block class="Magento\Framework\View\Element\Template" name="share.list" template="Magento_Catalog::shareList.phtml" after="-"/>
+</referenceContainer>
+<referenceBlock name="view.addto.compare" remove="true"/>
+<referenceContainer name="content" htmlTag="div" htmlClass="product-detail-page-a"/>
+<!--  <referenceBlock name="product.info.addtocart">
+                  <action method="setTemplate">
+                        <argument name="template" xsi:type="string">Team2PQuantity_AddQuantity::catalog/product/view/addtocart.phtml</argument>
+                  </action>
+            </referenceBlock>
+            <referenceBlock name="product.info.addtocart.additional">
+                  <action method="setTemplate">
+                        <argument name="template" xsi:type="string">Team2PQuantity_AddQuantity::catalog/product/view/addtocart.phtml</argument>
+                  </action>
+            </referenceBlock>  -->
+</body>
+</page>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="customer_account_navigation">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-new-tab-1">
+                <arguments>
+                    <argument name="path" xsi:type="string">reward_points/front/index</argument>
+                    <argument name="label" xsi:type="string">Reward Points</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="customer-account-navigation-new-tab-2">
+                <arguments>
+                    <argument name="path" xsi:type="string">reward_history/front/index</argument>
+                    <argument name="label" xsi:type="string">Reward Points History</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

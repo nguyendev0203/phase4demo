@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="cart.summary">
+            <block class="MagentoVendor\CRUD\Block\Reward" name="checkout.cart.reward.points.message.block" before="checkout.cart.shipping" template="MagentoVendor_CRUD::reward-points-message.phtml" />
+            <!-- <block class="MagentoVendor\CRUD\Block\Reward" name="checkout.cart.reward.points.block" before="checkout.cart.reward.points.message.block" template="MagentoVendor_CRUD::view/reward-points.phtml" /> -->
+        </referenceContainer>
+    </body>
+</page>

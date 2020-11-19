@@ -1,0 +1,36 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="CustomMenu\CustomFooterSocial\Block\Widget\customFooterSocial" id="CustomMenu_customsocial">
+        <label> Social Block </label>
+        <description>Social block detail </description>
+
+        <parameters>
+            <parameter name="social" xsi:type="select" visible="true" required="true" sort_order="20">
+                <label translate="true">Social</label>
+                <options>
+                    <option name="facebook" value="facebook">
+                        <label>Facebook</label>
+                    </option>
+                    <option name="twitter" value="twitter">
+                        <label>Twitter</label>
+                    </option>
+                    <option name="instagram" value="instagram">
+                        <label>Instagram</label>
+                    </option>
+                    <option name="lotus" value="lotus">
+                        <label>Lotus</label>
+                    </option>
+                    <option name="linkedin" value="linkedin">
+                        <label>Linkedin</label>
+                    </option>
+                    <option name="zalo" value="zalo">
+                        <label>Zalo</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="socialLink" sort_order="10" visible="true" xsi:type="text">
+                <label>Social link</label>
+            </parameter>
+        </parameters>
+
+    </widget>
+</widgets>

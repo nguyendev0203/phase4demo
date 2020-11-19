@@ -1,0 +1,77 @@
+<?php
+
+/** @var \Team2FeaturedCategory\FeaturedCategory\Block\Widget\FeaturedCategory $block */
+$items = $block->getCategoryProductCollection();
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
+$review =  $this->getLayout()->createBlock('Magento\Catalog\Block\Product\AbstractProduct');
+$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+$type = 'widget-product-grid'; ?>
+
+<div class="product-intro" id="tuan">
+    <div class="title-bottom">
+        <div class="widget-title">
+            <?php echo $block->getNameDisplay(); ?>
+        </div>
+    </div>
+
+
+    <?php foreach ($items as $product) :
+        $image_url = $imageHelper->init($product, 'product_base_image')->setImageFile($product->getFile())->getUrl();
+    ?>
+        <div class="product-default left-details product-widget">
+            <div class="row">
+                <div class="col-4" style="padding:0;">
+                    <figure class="image-product-tuan">
+                        <a href="<?= $product->getProductUrl() ?>">
+                            <img src="<?= $image_url ?>">
+                        </a>
+                        <!-- Discount -->
+                        <?php $finalPrice = $product->getFinalPrice();
+                        $price = $product->getPrice();
+                        if ($finalPrice < $price) { ?>
+                            <span class="discount_percent1">
+                                <?php
+                                $saving = round(($finalPrice / $price) * 100) - 100;
+                                echo $saving . "%"; ?>
+                            </span>
+                        <?php } ?>
+                        <!-- -->
+                    </figure>
+                </div>
+                <div class="col-8">
+                        <div class="product-details">
+                        <div class="product-title">
+                            <a href="product.html"><?php echo $product->getName(); ?></a>
+                        </div>
+                        <?php if (!empty($review->getReviewsSummaryHtml($product, $templateType, false))) { ?>
+                            <div class="ratings-container">
+                                <div class="product-ratings">
+                                    <span class="ratings" id="sao" style="width:100%"><?php echo $review->getReviewsSummaryHtml($product, $templateType, false); ?></span><!-- End .ratings -->
+                                </div>
+                                <!-- End .product-ratings -->
+                            </div>
+                        <?php } ?>
+                        <!-- No stars -->
+                        <?php if ((int)$product->getReviewsCount() == 0) : ?>
+                            <div class="abcd">
+                                <div class="rating-summary" id="rating-summary-none">
+                                    <div class="rating-result" title="0%">
+                                        <span style="width: 0%;"><span>0%</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <!-- -->
+                        <!-- End .product-container -->
+                        <div class="price-box">
+                            <span class="product-price"><?= $block->getProductPriceHtml($product, $type); ?></span>
+                        </div><!-- End .price-box -->
+                    </div><!-- End .product-details -->
+                </div>
+            </div>
+           
+         
+        </div>
+    <?php endforeach; ?>
+</div>

@@ -1,0 +1,9 @@
+<div class="footer-logo">
+    <!-- <img src='<?php echo $this->getViewFileUrl('images/logo.png'); ?>' alt="Demo"> -->
+    <?php
+    echo $this->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('footer-logo')
+        ->toHtml();
+    ?>
+</div>

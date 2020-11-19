@@ -1,0 +1,71 @@
+<?php
+$hasReward = false;
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+ //point obj
+
+//  $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // Instance of object manager
+//  $cus = $objectManager->create('Magento\Customer\Model\Session');
+ $cusId = $customerSession->getCustomer()->getId();
+ $customer_id = $cusId;
+ $resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+ $connection = $resource->getConnection();
+ $tableName = $resource->getTableName('reward_point');
+ $sql2 = "Select * FROM " . $tableName." Where customer_id=".$customer_id;
+ $result = $connection->fetchAll($sql2);
+ foreach($result as $row){
+     $rwpoint = $row["point"];
+ }
+ $pointCurrent = $rwpoint;
+//  $pointSpendRate = 1;
+
+//  $pointMinimumRequire = 20;   // Lay tu database len check
+ $pointSpendRate = $this->scopeConfig->getValue(self::XML_PATH_REWARD_POINT.'point_earn_calc/point_spendr', $storeScope);
+      // get minium rate order 
+    $pointMinimumRequire = $this->scopeConfig->getValue(self::XML_PATH_REWARD_POINT.'order_limit/min_point', $storeScope);
+if($customerSession->isLoggedIn()) {
+
+?>
+<h1>ccccccccccccccccccccccccc</h1>
+<div class="block discount" id="block-discount" data-mage-init='{"collapsible":{"active": <?= $hasReward ? 'true' : 'false' ?>, "openedState": "active", "saveState": false}}'>
+    <div class="title" data-role="title">
+        <strong id="block-discount-heading" role="heading" aria-level="2"><?= $block->escapeHtml(__('Apply Rewards')) ?></strong>
+    </div>
+    <div class="content" data-role="content" aria-labelledby="block-discount-heading">
+        <div class="reward-info">
+            <p class="reward-point-left">You have <strong><?php echo $pointCurrent ?></strong> points left</p>
+            <p class="reward-point-trace"><?php echo $pointSpendRate ?> for every 1 USD</p>
+        </div>
+        <form id="discount-coupon-form" action="<?= $block->escapeUrl($block->getUrl('reward_points/cart/rewardPost')) ?>" method="post" >
+            <div class="fieldset coupon<?= $hasReward ? ' applied' : '' ?>">
+                <input type="hidden" name="remove" id="remove-coupon" value="0" />
+                <div class="field">
+                    <label for="reward_point" class="label"><span><?= $block->escapeHtml(__('Enter reward point')) ?></span></label>
+                    <div class="control">
+                        <input type="number" class="input-text" id="reward_point" name="reward_point" value="<?= $block->escapeHtmlAttr($pointCurrent) ?>" <?php if ($hasReward || ($pointCurrent < $pointMinimumRequire)) : ?> disabled="disabled" <?php endif; ?> />
+                    </div>
+                </div>
+                <div class="actions-toolbar">
+                    <?php if (!$hasReward) : ?>
+                        <div class="primary">
+                            <button class="action apply primary" type="submit" value="<?= $block->escapeHtmlAttr(__('Apply Reward')) ?>">
+                                <span><?= $block->escapeHtml(__('Apply Reward')) ?></span>
+                            </button>
+                        </div>
+                    <?php else : ?>
+                        <div class="primary">
+                            <button type="submit" class="action cancel primary" value="<?= $block->escapeHtmlAttr(__('Cancel Reward')) ?>"><span><?= $block->escapeHtml(__('Cancel Reward')) ?></span></button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php if (!$hasReward) : ?>
+                <?= /* @noEscape */ $block->getChildHtml('captcha') ?>
+            <?php endif; ?>
+        </form>
+    </div>
+</div>
+<?php
+    
+}
+?>

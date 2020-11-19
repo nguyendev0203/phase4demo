@@ -1,0 +1,12 @@
+<li id="giftwrap-slider" data-bind="fadeVisible: isVisible">
+<span>123</span>
+<?php  
+$giftwraps = $block->getCollection();
+
+foreach ($giftwraps as $giftwrap) {
+	print_r($giftwrap->getData());
+}
+
+exit();
+?>
+</li>

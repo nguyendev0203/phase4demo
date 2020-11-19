@@ -1,0 +1,260 @@
+/* .product-item-info .quick-view-btn-container {
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    white-space: nowrap;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    z-index: 2;
+}
+.product-item .quick-view-btn-container:hover a.quick-view-button:hover, .product-item .quick-view-btn-container:hover a.quick-view-button{
+    background-color: #606da6;
+    text-decoration: none;
+}
+
+.product-item .quick-view-btn-container a.quick-view-button, .product-item a.quick-view-button {
+    align-content: center;
+    background-color: #606da6;
+    color: #fff;
+    font-family: 'HK Nova','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    padding: 14px 16px;
+    border: 2px solid #000;
+    width: 180px;
+    text-align: center;
+    text-transform: uppercase;
+}
+li.product-item:hover .quick-view-btn-container {
+    display: block;
+}
+
+.quick-view-btn-container {
+    display: none;
+} */
+
+/* li.product-item:hover {
+    box-shadow: 0 5px 30px 0 rgba(0,0,0,0.1);
+} */
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?vewzwf');
+    src:  url('../fonts/icomoon.eot?vewzwf#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?vewzwf') format('truetype'),
+    url('../fonts/icomoon.woff?vewzwf') format('woff'),
+    url('../fonts/icomoon.svg?vewzwf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.cms-home .block-title {
+    width: 50%;
+}
+.cms-home .section-feature-product {
+    display: flex;
+}
+.icon-shopping-bag {
+    font-size:12pt;
+    margin: 1px -2px 0px -6px;
+
+}
+.icon-shopping-bag:before {
+    content: "\e906";
+}
+.cms-home span.discount_percent {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+    top: 15px;
+    padding: 5px 10px;
+    background: #eb6f79;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.Feature-phu-product li.product-item {
+    position: relative;
+    text-align: center;
+}
+.cms-home .product-item .product-reviews-summary .reviews-actions {
+    display: none;
+}
+.cms-home .product-item .tocart {
+    background-color: #ffffff;
+    color: #444444;
+    border: 2px solid #dddddd;
+    display: flex;
+    align-items: center;
+}
+
+
+.cms-home .product-item-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cms-home .rating-result {
+    color: #c3c5c9;
+}
+/* .star-bestseller {
+    .product-reviews-summary.short {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    } 
+
+}  */
+.cms-home .product-item .product-reviews-summary .rating-summary {
+    margin: unset;
+    left: unset;
+}
+.cms-home .product-item .tocart .span-add-to-cart{
+    margin-left: 7px;
+}
+.cms-home .product-item .tocart:hover{
+    background: #fff;
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
+}
+
+.cms-home .product-item .tocart:hover i{
+    color: black;
+}
+.cms-home .product.data.items > .item.title > .switch-feature-product{
+    background: #fff !important;
+    border: unset !important;
+    padding: unset !important;
+}
+.cms-home .product.data.items > .item.title{
+    padding: 0px 10px 5px 10px !important;
+}
+.cms-home .product.data.items > .item.title.action > .switch-feature-product{
+    color: #606ea6 !important;
+    border-bottom: 4px solid #606ea6;
+}
+.cms-home .product.data.items > .item.title.active > .switch-feature-product:before{
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: #606ea6;
+    bottom: 0;
+    width: 100%;
+}
+.cms-home .product.data.items > .item.title:not(.disabled) > .switch-feature-product:active, .product.data.items > .item.title.active > .switch-feature-product, .product.data.items > .item.title.active > .switch-feature-product:focus, .product.data.items > .item.title.active > .switch-feature-product:hover{
+    color: #606ea6 !important;
+}
+.cms-home .product.data.items > .item.content{
+    border-top: unset !important;
+    margin: 0;
+    padding-top: 0;
+}
+
+.cms-home a.product-item-link:hover{
+    color: #606ea6;
+    text-decoration: none;
+}
+
+.cms-home .tabs-content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cms-home .tabs-content .item.title {
+    margin-right: 20px;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+.cms-home .tabs-content .item.title:last-child {
+    margin-right: 0;
+}
+
+
+.cms-home .tabs-content .item.title.active .switch-feature-product {
+    color: #606ea6;
+    padding: 0px 0px 4px 0px;
+    border-bottom: 4px solid #606ea6;
+
+}
+.cms-home .tabs-content .item.title .switch-feature-product:hover{
+    text-decoration: none;
+}
+.cms-home a.switch-feature-product{
+    color :black;
+
+}
+
+.cms-home a.switch-feature-product:hover {
+    border-bottom: 4px solid #606ea6;
+    padding: 0px 0px 4px 0px;
+}
+
+.cms-home .product-item-info .product-item-photo img:hover {
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
+} 
+.item.title.active .a.switch-feature-product:active {
+    border-bottom:4px solid #606ea6;
+}
+
+.cms-home strong.price-product {
+    font-size: 16px;
+
+}
+
+.cms-home .tabs-content.list-category {
+    padding: 25px 0px 0px 7px;
+    font-size: 15px;
+}
+
+.cms-home span.span-add-to-cart {
+    font-size: 12px;
+}
+
+.cms-home span.special-price-product {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.cms-home span.normal-price-product {
+    font-size: 14px;
+    text-decoration: line-through;
+    font-weight: 300;
+}
+
+.cms-home h2.text-feature-product {
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+}
+
+/*Hung7 fix css*/
+.cms-home .product-item .price-box .price {
+    font-size: 1.7rem;
+}
+.cms-home .product-item-info .product-image-container:hover {
+    box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
+}
+.cms-home .discount .slg {
+    font-size: 13px;
+}
+.cms-home .discount-price-product {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}

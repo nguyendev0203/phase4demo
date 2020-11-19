@@ -1,0 +1,358 @@
+/*Css Main banner for slider and general item on main banner*/
+div.relative {
+    position: relative;
+}
+
+div.absolute {
+    position: absolute;
+}
+.banner-content.content-left {
+    left: calc(5.79% - 10px);
+    top: 21%;
+    /* transform: translateY(-16%); */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+}
+
+@media only screen and (max-width: 700px) {
+    .banner-content.content-left {
+        left: calc(5.79% - 10px);
+        top: 10%;
+        /* transform: translateY(-16%); */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10%;
+    }
+}
+
+.banner-content h1 {
+    font-size: 4rem;
+    margin-bottom: 2.2rem;
+    color: #222529;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    font-family: inherit;
+}
+@media only screen and (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 3rem;
+        margin-bottom: 2.2rem;
+        color: #222529;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1.1;
+        font-family: inherit;
+    }
+    .text-banner-image-1-subtitle {
+        font-size: 2.5rem !important;
+    }
+    .text-banner-right-image-subtitle {
+        font-size: 2.2rem !important;
+    }
+}
+
+.banner-content .skew-box {
+    transform: skew(2deg, -3deg);
+}
+.sale-off-price{
+    background-color: #222529;
+    color: #fff;
+    font: 700 2.3rem "Open Sans",sans-serif;
+    padding: 0 1rem;
+    opacity: 1;
+    margin-right: 5px;
+}
+/* up to text*/
+.sale-off::before {
+    content: 'UP TO';
+    font: 600 1.4rem "Open Sans",sans-serif;
+    letter-spacing: 0;
+    color: #222529;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-80%, -50%) rotate(-90deg);
+}
+
+/* tag p starting from*/
+.text-noti {
+    color: #ed7e63;
+    font-weight: 800;
+    font-size: 1.7rem;
+    margin-bottom: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+}
+@media only screen and (max-width: 834px) {
+    .text-noti {
+        color: #ed7e63;
+        font-weight: 800;
+        font-size: 1.7rem;
+        margin-bottom: 1.3rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+    }
+}
+.text-noti-left {
+    color: #ed7e63;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin-bottom: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+/* Go coupon */
+.btnCoupon {
+    font: 700 1.4rem "Open Sans",sans-serif;
+    color: #fff;
+    background-color: #222529;
+    padding: 1rem 1.5rem;
+    letter-spacing: 0.01em;
+    border: none;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .2s ease-out;
+
+}
+.skew-box {
+    transform: skew(2deg, -3deg);
+}
+.btnCoupon:hover {
+    background-color: #ed7e63;
+    border-color: #ed7e63;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btnCoupon:visited {
+    color: white !important;
+}
+/* button */
+.btnShopnow:hover {
+    background-color: #ed7e63;
+    border-color: #ed7e63;
+    color: #fff !important;
+    text-decoration: none;
+    color: white !important;
+}
+.btnShopnow {
+    font: 700 1.4rem "Open Sans",sans-serif;
+    background-color: #222529;
+    padding: 0.5rem 1.5rem;
+    letter-spacing: 0.01em;
+    border: none;
+    color: #606da6 !important;
+    letter-spacing: 0.15em;
+    line-height: 2;
+    background: transparent;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #e7e7e7;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btnShopnow:focus {
+    text-decoration: none;
+    color: white !important;
+}
+/*icon for button*/
+.fas-img-left-1 {
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-size: 1.1rem;
+}
+.fas-img-right {
+    font-weight: 900;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+/* Css for Text of main-banner-left-01 */
+
+.banner-content-image.content-right {
+    top: 30%;
+    right: calc(3.68% - 10px);
+    text-align: right;
+}
+@media only screen and (max-width: 768px) { 
+    .banner-content-image.content-right {
+        top: 10%;
+    }
+}
+
+.banner-content-image {
+    /* position: absolute; */
+    font-family: "Poppins","Open Sans",sans-serif;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    z-index: 2;
+    padding: 0 1rem;
+}
+.banner-content-image h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #222529;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+    font-family: inherit;
+}
+.banner-info .price-off-slider {
+    background-color: #222529;
+    color: #fff;
+    font: 700 2.3rem "Open Sans",sans-serif;
+    padding: 0 1rem;
+    opacity: 1;
+    margin: 5px 5px 0 0;
+}
+.text-banner-image-1-subtitle {
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #222529;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    font-family: inherit;
+}
+.text-banner-image-1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #222529;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    font-family: inherit;
+}
+/*.banner-info-image span {*/
+/*    background-color: #222529;*/
+/*    color: #fff;*/
+/*    font: 700 2.3rem "Open Sans",sans-serif;*/
+/*    opacity: 1;*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*End CSS of main-banner-left-1 */
+.btnShopnowSmall:hover {
+    background-color: #ed7e63;
+    border-color: #ed7e63;
+    text-decoration: none;
+    color: white !important;
+}
+.btnShopnowSmall {
+    font: 700 1rem "Open Sans",sans-serif;
+    background-color: #222529;
+    padding: 0.8rem 1.1rem;
+    letter-spacing: 0.01em;
+    border: none;
+    color: #606ea6 !important;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    background: transparent;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #e7e7e7;
+}
+.btnShopnowSmall:focus {
+    text-decoration: none;
+    color: white !important;
+}
+
+/* CSS for main-banner-left-2 image*/
+/* hinh2 2*/
+.banner-content-image-2.content-top {
+    top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+.span-image {
+    color: #fffbf0;
+    opacity: 0.5;
+    font-size: 1.2rem;
+    letter-spacing: 0.025em;
+    font-weight: 400;
+    line-height: 1.1;
+}
+.banner-content-image-2  {
+    font-family: "Poppins","Open Sans",sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2.1rem;
+}
+.text-name-image-left-2 {
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    margin: 0;
+}
+.text-name-image-left-3 {
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    margin: 0;
+}
+/* CSS for main-banner-image-3*/
+.banner-content-image-3.content-bottom {
+    bottom: 30%;
+    text-align: center;
+    width: 100%;
+}
+
+.banner-content-image-3  {
+    font-family: "Poppins","Open Sans",sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 2.1rem;
+}
+.text-name-image-left-3 {
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+}
+.text-banner-right-image-subtitle {
+    text-transform: capitalize;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #222529;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.1;
+    font-family: inherit;
+}
+
+/* Phu  */
+span.discount_percent {
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+    top: 15px;
+    padding: 5px 10px;
+    background: red;
+    border-radius: 15px;
+    color: #fff;
+}
+
+li.product-item {
+    position: relative;
+}

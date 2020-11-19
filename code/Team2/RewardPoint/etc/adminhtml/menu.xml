@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Team2_RewardPoint::rewapo" title="Reward Point" module="Team2_RewardPoint" sortOrder="41" resource="Team2_RewardPoint::menu"/>
+        <add id="Team2_RewardPoint::parent" title="ViMagento Post" module="Team2_RewardPoint" sortOrder="10" resource="Team2_RewardPoint::menu" parent="Team2_RewardPoint::rewapo"/>
+        <add id="Team2_RewardPoint::post" title="Manage Posts" module="Team2_RewardPoint" sortOrder="10" action="rewardpoint/index/index"  parent="Team2_RewardPoint::parent" resource="Team2_RewardPoint::post"/>
+        <add id="Team2_RewardPoint::configuration" title="Manage Configuration" module="Team2_RewardPoint" sortOrder="20" parent="Team2_RewardPoint::parent" action="adminhtml/system_config" resource="Team2_RewardPoint::parent"/>
+    </menu>
+</config>

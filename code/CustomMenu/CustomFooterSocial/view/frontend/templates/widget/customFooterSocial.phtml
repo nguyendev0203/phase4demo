@@ -1,0 +1,26 @@
+
+<a class="social-icon" 
+href="<?php 
+
+echo $block->getData('socialLink') ;
+?>" target="_blank" rel="noopener">
+<i class="fab fa-<?php if($block->getData('social') == 'Facebook' || $block->getData('social') == 'facebook'){
+    echo 'facebook-f';
+}
+elseif ($block->getData('social') == 'linkedin' || $block->getData('social') == 'Linkedin'){
+    echo 'linkedin';
+}
+elseif ($block->getData('social') == 'Instagram'){
+    echo 'instagram';
+}
+elseif ($block->getData('social') == 'Twitter'){
+    echo 'twitter';
+}
+else{
+
+
+echo $block->getData('social') ;
+}
+
+?>"></i>
+</a>

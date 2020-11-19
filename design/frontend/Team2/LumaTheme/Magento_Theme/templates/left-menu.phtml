@@ -1,0 +1,66 @@
+<?php
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+// get list of all the categories
+$categories = $objectManager->get('\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory')->create();
+$categories->addAttributeToSelect('*');
+?>
+<script>
+    function toggleFunction() {
+        var x = document.getElementById("toggle-id-check");
+        if (x.className === "toggle-ul") {
+            x.className += " active";
+        } else {
+            x.className = "toggle-ul";
+        }
+    }
+
+    function openSlideMenu() {
+        document.getElementById('toggle-id-check').style.width = '200px';
+        document.getElementById('all-for-menu').style.marginLeft = '200px';
+    }
+    
+
+    function closeSlideMenu() {
+        document.getElementById('toggle-id-check').style.width = '0';
+        document.getElementById('all-for-menu').style.marginLeft = '0';
+    }
+</script>
+<div class="left-menu-sidebar" id="header-left-content-menu">
+    <button class="toggle-menu-header" onclick="openSlideMenu()"><i class="fas fa-bars"></i></button>
+    <ul class="toggle-ul" id="toggle-id-check">
+
+
+        <a href="#" class="close-menu" onclick="closeSlideMenu()">
+            <i class="fas fa-times"></i>
+        </a>
+
+
+        <li><a href="http://team2.local/" class="active">Home</a></li>
+        <li class="dropdownMenu">
+            <a href="#">Shop</a>
+            <div class="dropdown-menu-content">
+                <ul>
+                    <?php
+                    foreach ($categories as $category) {
+                        if ($category->getId() == 1 || $category->getId() == 2) {
+                            continue;
+                        }
+                        if ($category->getIsActive() == 1 && $category->getIncludeInMenu() == 1) {
+                    ?>
+                            <li>
+                                <a href="<?php echo $category->getUrl() ?>"><?php echo $category->getName() ?></a>
+
+                            </li>
+                    <?php }
+                    } ?>
+                </ul>
+            </div>
+        </li>
+
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Pages</a></li>
+        <li><a href="#">Feature</a></li>
+    </ul>
+</div>

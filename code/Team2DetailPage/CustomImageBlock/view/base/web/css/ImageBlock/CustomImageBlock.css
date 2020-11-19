@@ -1,0 +1,6 @@
+/*responsive html block*/
+@media only screen and (max-width: 768px) {
+    .custom-image-block {
+      display: none;
+    }
+  }

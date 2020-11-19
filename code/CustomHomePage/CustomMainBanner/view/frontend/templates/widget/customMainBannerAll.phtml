@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <?php echo $this->getLayout()->createBlock("CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerLeft")
+            ->setTemplate("CustomHomePage\CustomMainBanner\view\frontend\templates\widget\customMainBannerLeft.phtml")
+            ->toHtml(); ?>
+        </div>
+        <div class="col-md-6">
+            <?php echo $this->getLayout()->createBlock("CustomHomePage\CustomMainBanner\Block\Widget\customMainBannerRight")
+            ->setTemplate("CustomHomePage\CustomMainBanner\view\frontend\templates\widget\customMainBannerRight.phtml")
+            ->toHtml(); ?>
+        </div>
+    </div>
+</div>

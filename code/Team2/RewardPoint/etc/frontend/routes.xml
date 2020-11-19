@@ -1,0 +1,16 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+<router id="standard">
+<!--         <route id="reward_history" frontName="reward_history"> -->
+<!--             <module name="Team2_RewardPoint" /> -->
+<!--         </route> -->
+<route id="reward_history1" frontName="reward_history1">
+<module name="Team2_RewardPoint"/>
+</route>
+<route id="reward_points" frontName="reward_points">
+<module name="Team2_RewardPoint"/>
+</route>
+<route id="reward_history" frontName="reward_history">
+<module name="Team2_RewardPoint"/>
+</route>
+</router>
+</config>

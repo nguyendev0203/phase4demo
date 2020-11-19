@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Team3Vendor_GiftwrapSlider::team3giftwrapslider" title="Team 3 Giftwrap Sliders" module="Team3Vendor_GiftwrapSlider" sortOrder="102" resource="Team3Vendor_GiftwrapSlider::team3giftwrapslider" parent="Magento_Backend::content"/>
+        <add id="Team3Vendor_GiftwrapSlider::team3giftwrap" title="Team 3 Manage Giftwraps" module="Team3Vendor_GiftwrapSlider" sortOrder="21" parent="Team3Vendor_GiftwrapSlider::team3giftwrapslider" action="team3giftwrapslider/giftwrap/index" resource="Team3Vendor_GiftwrapSlider::team3giftwrap"/>
+    </menu>
+</config>

@@ -1,0 +1,13 @@
+.rw-detail > .rw_points {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+.rw-detail > .rw-balance {
+    font-size: 14pt;
+}
+.rw-detail > .rw-total > .rw-point-total{
+    font-weight: bold;
+}
+.rw-detail > .rw-spent > .rw-point-spent {
+    font-weight: bold;
+}

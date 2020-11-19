@@ -1,0 +1,40 @@
+
+
+<script>
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function toggleFunction() {
+        var x = document.getElementById("check-toggle");
+        if (x.className === "left-header-container col-md-5 col-sm-6") {
+            x.className += " menuactive";
+        } else {
+            x.className = "left-header-container col-md-5 col-sm-6";
+        }
+    }
+</script>
+
+<div class="header-right-main">
+    <div class="all-icons">
+        <!-- <a type="button" class="right-icon" onclick="toggleFunction()"><span class="toggle-menu-header-m"></span></a> -->
+
+        <a href="/customer/account/login" class="right-icon"><span class="icon-userp"></span></a>
+
+        <a type="button" class="right-icon" onclick="myFunction()"><span class="icon-loupep"></span></a>
+        <div id="myDropdown" class="dropdown-content">
+            <?php echo $this->getLayout()->createBlock('Magento\Framework\View\Element\Template')->setTemplate('Magento_Search::form.mini.phtml')->toHtml(); ?>
+        </div>
+
+        <a href="/wishlist" class="right-icon"><span class="icon-heartp"></span></a>
+
+
+
+        <?php echo $this->getLayout()
+            ->createBlock('Magento\Checkout\Block\Cart\Sidebar')
+            ->setTemplate('Magento_Checkout::cart/minicart.phtml')
+            ->toHtml();
+        ?>
+
+    </div>
+</div>

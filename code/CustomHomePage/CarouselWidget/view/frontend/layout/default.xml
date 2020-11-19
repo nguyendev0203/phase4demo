@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="CustomHomePage_CarouselWidget::css/owlcarousel/owl.carousel.min.css"/>
+        <css src="CustomHomePage_CarouselWidget::css/owlcarousel/owl.theme.default.min.css" />
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block name="customhomepage.carousel.widget.js"
+                    class="Magento\Framework\View\Element\Template"
+                    template="CustomHomePage_CarouselWidget::script.phtml" 
+            />
+        </referenceContainer>
+    </body>
+</page>

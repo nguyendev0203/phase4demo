@@ -1,0 +1,495 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+@import 'fields/_file-uploader.less';
+
+@checkout-wrapper__margin: @indent__base;
+@checkout-wrapper__columns: 16;
+
+@checkout-step-title__border: @border-width__base solid @color-gray80;
+@checkout-step-title__font-size: 26px;
+@checkout-step-title__font-weight: @font-weight__light;
+@checkout-step-title__padding: @indent__s;
+
+@checkout-step-title-mobile__font-size: 18px;
+
+@checkout-step-content-mobile__background: @color-gray-light01;
+@checkout-step-content-mobile__margin-s: 15px;
+@checkout-step-content-mobile__margin: @indent__base -(@checkout-step-content-mobile__margin-s) @checkout-step-content-mobile__margin-s;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    .checkout-index-index {
+        .page-title-wrapper {
+            &:extend(.abs-visually-hidden all);
+        }
+    }
+
+    .checkout-container {
+        &:extend(.abs-add-clearfix all);
+        .lib-css(margin, 0 0 @checkout-wrapper__margin);
+        /*Hungggggg */
+        .methods-shipping {
+        .actions-toolbar {
+            .action.primary {
+                background: #606ea6;
+                border: 1px solid #606ea6;
+                border-radius: 0%;
+                &:hover {
+                    background: #606ea6;
+                }
+            }
+            .action.action-remind {
+                span {
+                    color: #606ea6;
+                    &:hover {
+                        color: #606ea6;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        }
+        .authentication-wrapper {
+            margin-top: 0%;
+            /*Modal content */
+            .action.action-auth-toggle {
+                color: #606ea6;
+                font-size: 1.5rem;
+                margin-top: 2.3rem;
+                margin-left: 2rem;
+                font-weight: 600;
+            }
+            .modal-custom.authentication-dropdown {
+                border-top: 5px solid #606ea6;
+                .action-close::before {
+                    font-size: 1rem;
+                    font-weight: 900;
+                    color: #606ea6;
+                    &:hover {
+                        color: #606ea6;
+                    }
+                }
+            }
+            .modal-content {
+                .block-authentication {
+                    .actions-toolbar {
+                        .action.action-login {
+                            padding: 0.2rem 2rem;
+                            font-size: 1.2rem;
+                            color: gray;
+                            background: white;
+                            margin-top: 1.2rem;
+                            border-radius: 0;
+                        }
+                    }
+                }
+                .block.block-customer-login {
+                    .block-content {
+                        .actions-toolbar {
+                            .action.action-remind {
+                                color: #606ea6;
+                                &:hover {
+                                    color: #606ea6;
+                                    text-decoration: none;
+                                }
+                                &:visited {
+                                    color: #606ea6;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .opc-estimated-wrapper {
+            .estimated-block {
+                .estimated-price {
+                    color: #2088cc;
+                }
+            }
+            .minicart-wrapper {
+                button.action.showcart {
+                    display: flex;
+                    .counter.qty {
+                        padding: 2rem;
+                        font-weight: 900;
+                        margin: 0;
+                        position: absolute;
+                        background: none;
+                        .counter-number {
+                            font-size: 1.7rem;
+                            color: white;
+                        }
+                    }
+                    .counter-number {
+                        text-shadow: 0;
+                        font-size: 2rem;
+                        color: #606ea6;
+                    }
+                }
+                .action.showcart {
+                    .counter-number {
+                        text-shadow: none;
+                        font-size: 1.7rem;
+                        color: white;
+                    }
+                }
+                .action.showcart::before {
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-size: 50px;
+                    line-height: 50px;
+                    color: #757575;
+                    content: "\e90c";
+                    font-family: "icomoon" !important;
+                    speak: never;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-variant: normal;
+                    text-transform: none;
+
+                    margin: 0;
+                    vertical-align: top;
+                    display: inline-block;
+                    font-weight: normal;
+                    overflow: hidden;
+                    speak: none;
+                    text-align: center;
+                    color: #606ea6;
+                }
+            }
+        }
+        /*Set style product popup */
+        .modal-custom.opc-sidebar.opc-summary-wrapper._show {
+            .modal-inner-wrap {
+                .modal-header {
+                    .action-close::before { //Style for close button 
+                        font-size: 1rem;
+                        font-weight: 900;
+                        padding-top: 1.3rem;
+                        color: #606ea6;
+                    }
+                }
+                .modal-content {
+                    #opc-sidebar {
+                        .block.items-in-cart {
+                            .title {
+                                strong {
+                                    span {
+                                        font-weight: 600;
+                                        font-size: 1.7rem;
+                                        text-transform: uppercase;
+                                    }
+                                }
+                            }
+                        }
+                        .content.minicart-items {
+                            .minicart-items-wrapper.overflowed {
+                                .minicart-items {
+                                    border-bottom: 1px solid #ccc;
+                                    .product-item {
+                                        .product {
+                                            // Hover image in order summary
+                                            .product-image-container {
+                                                .product-image-wrapper {
+                                                   border: 1px solid grey;
+                                                }
+                                            }
+                                            .product-item-details {
+                                                .product-item-inner {
+                                                    display: flex;
+                                                    .product-item-name-block {
+                                                        width: 67%;
+                                                        .product-item-name {
+                                                            font-weight: 600;
+                                                            font-size: 1.7rem;
+                                                        }
+                                                    }
+                                                    .subtotal {
+                                                        .price-excluding-tax { 
+                                                            .cart-price {
+                                                                span.price {
+                                                                    width: 30%;
+                                                                    font-weight: 700;
+                                                                }
+                                                            }
+                                                        
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // Link telephone checkout/payment 
+                        .opc-block-shipping-information {
+                            .shipping-information {
+                                .ship-to {
+                                    .shipping-information-title {
+                                        .action.action-edit {
+                                            &::before {
+                                                color: #606ea6;
+                                            }
+                                        }
+                                    }
+                                    a {
+                                        color: #606ea6;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*End of*/
+        /*Style of sidebar additional Order Summary checkout/payment */
+        .modal-custom.opc-sidebar.opc-summary-wrapper.custom-slide {
+            .modal-inner-wrap {
+                .modal-content {
+                    #opc-sidebar {
+                        // Link telephone checkout/payment 
+                        .opc-block-shipping-information {
+                            .shipping-information {
+                                .ship-to { // Ship to 
+                                    .shipping-information-title {
+                                        .action.action-edit {
+                                            &::before {
+                                                color: #606ea6;
+                                            }
+                                        }
+                                    }
+                                    a {
+                                        color: #606ea6;
+                                    }
+                                }
+                                .ship-via { //Shipping method
+                                    .shipping-information-title {
+                                        .action.action-edit {
+                                            &::before {
+                                                color: #606ea6;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       
+        /**/
+    }
+
+    .opc-wrapper {
+        .lib-css(margin, 0 0 @checkout-wrapper__margin);
+
+        .opc {
+            &:extend(.abs-reset-list all);
+            /*Hung*/
+            .checkout-payment-method {
+                #checkout-step-payment {
+                    #co-payment-form {
+                        .fieldset {
+                            .legend {
+                                span {
+                                    font-weight: 600;
+                                }
+                            }
+                            #checkout-payment-method-load {
+                                .payment-method-billing-address {
+                                    .checkout-billing-address {
+                                        .billing-address-details {
+                                            // Telephone number
+                                            a {
+                                                color: #606ea6;
+                                            }
+                                        }
+                                    }
+                                }
+                                // button Place order
+                                .actions-toolbar {
+                                    .primary {
+                                        .action.primary.checkout {
+                                            background: #606ea6;
+                                            border: 1px solid #606ea6;
+                                            border-radius: 0%;
+                                        }
+                                    }
+                                }
+                            }
+                            // Apply discount button
+                            .payment-option._collapsible.opc-payment-additional.discount-code {
+                                .action.action-toggle {
+                                    color: #606ea6;
+                                    text-transform: capitalize;
+                                    font-weight: 600;
+                                    font-size: 1.5rem;
+                                }
+                            }
+                            .payment-option-content {
+                                .form.form-discount { // Change style of apply discount input
+                                    display: grid;
+                                    width: 100%;
+                                    padding-left: 0;
+                                    .actions-toolbar { // Button apply discount
+                                        .primary {
+                                            .action.action-apply {
+                                                padding: 0.7rem 2rem;
+                                                font-size: 1.2rem;
+                                                color: gray;
+                                                background: white;
+                                                border-radius: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .checkout-shipping-address {
+                #checkout-step-shipping {
+                    // Button new address
+                    .new-address-popup {
+                        .action.action-show-popup {
+                            padding: 0.2rem 2rem;
+                            font-size: 1.2rem;
+                            color: gray;
+                            background: white;
+                            margin-top: 1.2rem;
+                            border-radius: 0;
+                        }
+                    }
+                    .form.form-login {
+                        .actions-toolbar {
+                            .primary {
+                                .action.login.primary {
+                                    background: #606ea6;
+                                    border-radius: 0%;
+                                    border: none;
+                                }
+                            }
+                            .secondary {
+                                .action.remind {
+                                    color: #606ea6;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .step-title {
+            &:extend(.abs-checkout-title all);
+            .lib-css(border-bottom, @checkout-step-title__border);
+            margin-bottom: 15px;
+        }
+
+        .step-content {
+            margin: 0 0 @indent__xl;
+        }
+    }
+    .checkout-index-index {
+        .nav-sections,
+        .nav-toggle {
+            display: none;
+        }
+
+        .logo {
+            margin-left: 0;
+        }
+    }
+    .checkout-onepage-success {
+        &:extend(.abs-add-clearfix all);
+
+        .print {
+            display: none;
+        }
+    }
+    .abs-discount-code {
+        .form-discount {
+            display: table;
+            width: 100%;
+
+            .actions-toolbar {
+                display: table-cell;
+                vertical-align: top;
+                width: 1%;
+
+                .primary {
+                    float: left;
+                    .action {
+                        &:extend(.abs-revert-to-action-secondary all);
+                        border-bottom-left-radius: 0;
+                        border-top-left-radius: 0;
+                        margin: 0 0 0 -2px;
+                        white-space: nowrap;
+                        width: auto;
+                    }
+                }
+            }
+
+            > .field {
+                > .label {
+                    display: none; 
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .opc-wrapper {
+        .step-title {
+            .lib-css(font-size, @checkout-step-title-mobile__font-size);
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-content {
+            .lib-css(margin, 0 0 @checkout-step-content-mobile__margin-s);
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .opc-wrapper {
+        &:extend(.abs-add-box-sizing-desktop-m all);
+        .lib-layout-column(2, 1, @checkout-wrapper__columns);
+        padding-right: @indent__l;
+    }
+
+    .checkout-onepage-success {
+        .print {
+            display: block;
+            float: right;
+            margin: 23px 0 0;
+        }
+    }
+}

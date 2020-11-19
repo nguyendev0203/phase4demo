@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Team2\OrderComment\Api\Data\OrderCommentInterface" type="Team2\OrderComment\Model\Data\OrderComment" />
+    <preference for="Team2\OrderComment\Api\OrderCommentManagementInterface" type="Team2\OrderComment\Model\OrderCommentManagement" />
+    <preference for="Team2\OrderComment\Api\GuestOrderCommentManagementInterface" type="Team2\OrderComment\Model\GuestOrderCommentManagement" />
+
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="bold_order_comment" xsi:type="string">sales_order.bold_order_comment</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="bold_load_ordercomment" type="Team2\OrderComment\Plugin\Model\Order\LoadOrderComment"/>
+    </type>
+</config>

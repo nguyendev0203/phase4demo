@@ -1,0 +1,72 @@
+/*Button Collapsible content*/
+.collapsible-content {
+  font: normal 400 1.3rem / 1.4 "Poppins","Open Sans",sans-serif;
+}
+.collapsible {
+  color: black;
+  cursor: pointer;
+  width: 100%;
+  background-color: transparent;
+  text-decoration: none;
+  font: 600 1.2rem/1.1 "Poppins","Open Sans",sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all .2s ease-out;
+}
+
+.collapsible:focus {
+  color: inherit;
+  text-decoration: none;
+}
+.collapsible-title {
+  border-bottom: .2rem solid #dfdfdf;
+  padding-bottom: 1rem;
+  border-bottom-width: 1px;
+}
+.collapsible-active, .collapsible:hover {
+  color: #fd7e14;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* .collapsible:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.collapsible-active:after {
+  content: "\2212";
+} */
+
+.content-htmlblock {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+/*subtitle css*/
+.subtitle-text {
+  color: #7a7d82;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+/*content css*/
+.content-text {
+  line-height: 27px;
+  font-size: 1.3rem;
+  color: #222529;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+/*responsive html block*/
+@media only screen and (max-width: 768px) {
+  .collapsible-content {
+    display: none;
+  }
+}

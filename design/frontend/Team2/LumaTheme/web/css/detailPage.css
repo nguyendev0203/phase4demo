@@ -1,0 +1,37 @@
+/*Customtab*/
+.catalog-product-view {
+    font-family: "Open Sans", sans-serif;
+    color: #465157;
+    font: 400 1.2rem/1.4 "Poppins", "Open Sans", sans-serif;
+    letter-spacing: -.015em;
+}
+.catalog-product-view .fieldset.review-fieldset {
+}
+.catalog-product-view .data.item.title {
+    opacity: 0.2;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+}
+.catalog-product-view .data.item.title .data.switch {
+    text-transform: uppercase;
+    border: none;
+    display: contents !important;
+}
+.catalog-product-view .data.item.title.active {
+    border-bottom: 2px solid #606EA6;
+    opacity: 1;
+}
+.catalog-product-view .data.item.title.active{
+    border-bottom: 2px solid #606EA6;
+    opacity: 1;
+}
+
+.catalog-product-view .actions-primary .action.submit.primary {
+    width: auto;
+    background: #606EA6;
+    color: white;
+    height: 5rem;
+}
+.catalog-product-view .actions-primary .action.submit.primary span {
+
+}

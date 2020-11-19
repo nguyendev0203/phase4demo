@@ -1,0 +1,33 @@
+
+<table class="table">
+  <thead>
+    <tr>
+        <th >ID</th>
+        <th >Customer ID</th>
+        <th >Action</th>
+        <th >Point</th>
+        <th >Type</th>
+        <th >Order ID</th>
+        <th >Author</th>
+        <th >Create At</th>
+        <th >Update At</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+  $historyCollection=$block->getHistoryCollectionFront();
+  foreach($historyCollection as $row):?>
+    <tr>
+        <td><?=$row['id'];?></td>
+        <td><?=$row['customer_id'];?></td>
+        <td><?=$row['action'];?></td>
+        <td><?=$row['point'];?></td>
+        <td><?=$row['type'];?></td>
+        <td><?=$row['order_id'];?></td>
+        <td><?=$row['author'];?></td>
+        <td><?=$row['created_at'];?></td>
+        <td><?=$row['updated_at'];?></td>
+    </tr>
+  <?php endforeach;?>
+  </tbody>
+</table>

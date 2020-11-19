@@ -1,0 +1,31 @@
+<?php if ($block->getData('main_banner_left_1_image')) : ?>
+<!--NAMING CONVENTION: KHONG DUOC DAT TEN CO KI TU DAC BIET -  -->
+<div class="col-md-5 main-banner-left-block">
+    <div class="row">
+    <div class="relative banner-image-left-1"><a href="<?php echo $block->getData("main_banner_left_1_link")?>"> <img class="main-banner-left-image-1"
+            src="<?php echo $block->getData("main_banner_left_1_image")?>" alt=""> </a>
+        <div class="banner-content-image content-right absolute">
+            <h3 class="text-banner-image-1"><strong><?php echo $block->getData("main_banner_left_1_title")?><br><span class="text-banner-image-1-subtitle"><?php echo $block->getData("main_banner_left_1_content")?></span></strong></h3>
+            <div class="banner-info-image">
+                <p class="text-noti-left"><?php echo $block->getData("main_banner_left_1_promo")?></p>
+                <a class="btnShopnowSmall" href="<?php echo $block->getData("main_banner_left_1_button_link")?>"><?php echo $block->getData("main_banner_left_1_button")?><i class="fas fa-long-arrow-alt-right fas-img-left-1" style="padding-left:inherit;color:#606EA6;"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row banner-left-2-images-below">
+        <div class="col-4 relative" style="padding: 0%;"><a href="<?php echo $block->getData("main_banner_left_2_link")?>"> <img
+                class="main-banner-left-image" src="<?php echo $block->getData("main_banner_left_2_image")?>"> </a>
+            <div class="banner-content-image-2 content-top absolute"><span class="span-image"><?php echo $block->getData("main_banner_left_2_title")?></span>
+            <h3 class="text-name-image-left-2"><strong><?php echo $block->getData("main_banner_left_2_content")?></strong></h3>
+            </div>
+        </div>
+        <div class="col-8 relative" style="padding: 0 0 0 1rem;"><a href="<?php echo $block->getData("main_banner_left_3_link")?>"> <img
+                class="main-banner-left-image" src="<?php echo $block->getData("main_banner_left_3_image")?>" alt=""> </a>
+            <div class="banner-content-image-3 content-bottom absolute"><span class="span-image"><?php echo $block->getData("main_banner_left_3_title")?></span>
+            <h3 class="text-name-image-left-3"><strong><?php echo $block->getData("main_banner_left_3_content")?></strong></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

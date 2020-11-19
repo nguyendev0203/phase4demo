@@ -1,0 +1,57 @@
+.input-group-btn-vertical .increaseQty{
+    padding: 0;
+    border-radius: 0px;
+    padding: 0.1rem;
+    color: #ccc;
+    border-color: #ccc;
+    background-color: transparent;
+    background-image: none;
+    height: 16px;
+    width: 16px;
+    display: flex;
+    margin-bottom: 2px;
+}
+.input-group-btn-vertical .decreaseQty {
+    padding: 0;
+    border-radius: 0px;
+    padding: 0.1rem;
+    color: #ccc;
+    border-color: #ccc;
+    background-color: transparent;
+    background-image: none;
+    height: 16px;
+    width: 16px;
+    display: flex;
+    margin-top: 2px;
+}
+.qty-field-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-group-btn-vertical{
+    margin-top: -7px;
+    justify-content: space-between;
+    /* height: 4.5rem; */
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 2px; */
+}
+
+.qty-field-wrapper input{
+    /* height: 4.5rem; */
+}
+
+.input-group-btn-vertical .increaseQty svg{
+    font-size: 1rem;
+}
+.input-group-btn-vertical .increaseQty:hover{
+    color:black;
+}
+.input-group-btn-vertical .decreaseQty:hover{
+    background-color: transparent;
+}
+.input-group-btn-vertical .decreaseQty svg{
+    font-size: 1rem;
+}
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Team2BrowseAll_OnePageProducts::css/browseall.css"/>
+    </head>
+    <update handle="catalog_category_view" />
+    <update handle="catalog_category_view_type_layered" />
+    <referenceBlock name="catalog.compare.sidebar" remove="true" />
+    <referenceBlock name="wishlist_sidebar" remove="true" />
+    <referenceBlock name="category.products.list">
+    <referenceBlock name="category.product.addto.compare" remove="true"/>
+    <referenceBlock name="breadcrumbs" remove="true" />
+    <action method="setTemplate">
+        <argument name="template" xsi:type="string">Team2BrowseAll_OnePageProducts::list.phtml</argument>
+    </action>
+</referenceBlock>
+</page>

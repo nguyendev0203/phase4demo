@@ -1,0 +1,80 @@
+
+<div class="admin__control-support-text">
+                        <span id="reviewGrid-total-count" data-ui-id="admin-customer-reviews-total-count">
+                            0                        </span>
+    records found                    <span id="reviewGrid_massaction-count" class="mass-select-info _empty">
+                        <strong data-role="counter">0</strong>
+                        <span>selected</span>
+                    </span>
+</div><div class="admin__data-grid-pager-wrap">
+
+    <select name="limit" id="reviewGrid_page-limit" onchange="reviewGridJsObject.loadByElement(this)" class="admin__control-select">
+        <option value="20" selected="selected">20
+        </option>
+        <option value="30">30
+        </option>
+        <option value="50">50
+        </option>
+        <option value="100">100
+        </option>
+        <option value="200">200
+        </option>
+    </select>
+    <label for="reviewGridreviewGrid_page-limit" class="admin__control-support-text">per page</label>
+
+    <div class="admin__data-grid-pager">
+        <button type="button" class="action-previous disabled">
+            <span>Previous page</span>
+        </button>
+        <input type="text" id="reviewGrid_page-current" name="page" value="1" class="admin__control-text" data-ui-id="admin-customer-reviews-current-page">
+        <script type="text/javascript">            function eventListeneryFkYzMCaRI () {
+                reviewGridJsObject.inputPage(event, '1');
+            }
+            var listenedElementyFkYzMCaRI = document.querySelector("#reviewGrid_page-current");
+            if (listenedElementyFkYzMCaRI) {
+                listenedElementyFkYzMCaRI.onkeypress = function (event) {
+                    var targetElement = listenedElementyFkYzMCaRI;
+                    if (event && event.target) {
+                        targetElement = event.target;
+                    }
+                    eventListeneryFkYzMCaRI.apply(targetElement);
+                }
+            }</script>                        <label class="admin__control-support-text" for="reviewGrid_page-current">
+            of <span>1</span>                        </label>
+        <button type="button" class="action-next disabled">
+            <span>Next page</span>
+        </button>
+    </div>
+</div>
+
+<div class="admin__data-grid-wrap admin__data-grid-wrap-static">
+    <table class="data-grid" width="100%" border="1">
+        <tr align="center">
+            <th class="data-grid-th _sortable not-sort col-id col-review_id">ID</th>
+            <th class="data-grid-th">Customer ID</th>
+            <th class="data-grid-th">Action</th>
+            <th class="data-grid-th">Point</th>
+            <th class="data-grid-th">Type</th>
+            <th class="data-grid-th">Order ID</th>
+            <th class="data-grid-th">Author</th>
+            <th class="data-grid-th">Create At</th>
+            <th class="data-grid-th">Update At</th>
+        </tr>
+        <?php
+        $historyCollection=$block->getHistoryCollection();
+        foreach($historyCollection as $row):
+            ?>
+            <tr class="admin__table-secondary" align="center">
+                <td><?=$row['id'];?></td>
+                <td><?=$row['customer_id'];?></td>
+                <td><?=$row['action'];?></td>
+                <td><?=$row['point'];?></td>
+                <td><?=$row['type'];?></td>
+                <td><?=$row['order_id'];?></td>
+                <td><?=$row['author'];?></td>
+                <td><?=$row['created_at'];?></td>
+                <td><?=$row['updated_at'];?></td>
+            </tr>
+        <?php endforeach;?>
+    </table>
+</div>
